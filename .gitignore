@@ -9,17 +9,15 @@ node_modules/
 .env
 .idea/
 .php-cs-fixer.cache
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
+.phpunit.cache/
 *.swp
 
 # dependency lock file
 composer.lock
-yarn.lock
+pnpm-lock.yaml
 
 # overrides for local tooling
-/phpstan.neon
+phpstan.neon
+phpstan-baseline.neon
+phpunit.xml
 
-# tests
-.phpunit.cache/
