@@ -66,6 +66,8 @@ abstract class SiteCommentView extends SiteView
 
     protected function displayHeader(SiteComment $comment)
     {
+        $elements = [];
+
         $heading_tag = new SwatHtmlTag('h4');
         $heading_tag->class = 'comment-title';
 

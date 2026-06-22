@@ -2,6 +2,10 @@
 
 require_once __DIR__ . '/vendor/autoload.php';
 
+/**
+ * @property SiteAMQPModule   $amqp
+ * @property SiteConfigModule $config
+ */
 class AMQPTestClient extends SiteCommandLineApplication
 {
     public function run()

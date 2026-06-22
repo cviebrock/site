@@ -2,6 +2,9 @@
 
 require_once __DIR__ . '/vendor/autoload.php';
 
+/**
+ * @property SiteConfigModule $config
+ */
 class AMQPTestServer extends SiteAMQPApplication
 {
     protected function doWork(SiteAMQPJob $job)
