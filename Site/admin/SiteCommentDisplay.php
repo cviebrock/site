@@ -286,47 +286,28 @@ abstract class SiteCommentDisplay extends SwatControl
         $spam_text = SwatString::quoteJavaScriptString(Site::_('Spam'));
         $delete_text = SwatString::quoteJavaScriptString(Site::_('Delete'));
         $cancel_text = SwatString::quoteJavaScriptString(Site::_('Cancel'));
+        $not_spam_text = SwatString::quoteJavaScriptString(Site::_('Not Spam'));
+        $unpublish_text = SwatString::quoteJavaScriptString(Site::_('Unpublish'));
+        $status_spam_text = SwatString::quoteJavaScriptString(Site::_('Spam'));
+        $status_pending_text = SwatString::quoteJavaScriptString(Site::_('Pending'));
+        $status_unpublished_text = SwatString::quoteJavaScriptString(Site::_('Unpublished'));
+        $delete_confirmation_text = SwatString::quoteJavaScriptString(Site::_('Delete comment?'));
 
-        $not_spam_text = SwatString::quoteJavaScriptString(
-            Site::_('Not Spam')
-        );
+        return <<< JAVASCRIPT
+                SiteCommentDisplay.edit_text      = {$edit_text};
+                SiteCommentDisplay.approve_text   = {$approve_text};
+                SiteCommentDisplay.deny_text      = {$deny_text};
+                SiteCommentDisplay.publish_text   = {$publish_text};
+                SiteCommentDisplay.unpublish_text = {$unpublish_text};
+                SiteCommentDisplay.spam_text      = {$spam_text};
+                SiteCommentDisplay.not_spam_text  = {$not_spam_text};
+                SiteCommentDisplay.delete_text    = {$delete_text};
+                SiteCommentDisplay.cancel_text    = {$cancel_text};
 
-        $unpublish_text = SwatString::quoteJavaScriptString(
-            Site::_('Unpublish')
-        );
-
-        $status_spam_text = SwatString::quoteJavaScriptString(
-            Site::_('Spam')
-        );
-
-        $status_pending_text = SwatString::quoteJavaScriptString(
-            Site::_('Pending')
-        );
-
-        $status_unpublished_text = SwatString::quoteJavaScriptString(
-            Site::_('Unpublished')
-        );
-
-        $delete_confirmation_text = SwatString::quoteJavaScriptString(
-            Site::_('Delete comment?')
-        );
-
-        return "SiteCommentDisplay.edit_text   = {$edit_text};\n"
-            . "SiteCommentDisplay.approve_text   = {$approve_text};\n"
-            . "SiteCommentDisplay.deny_text      = {$deny_text};\n"
-            . "SiteCommentDisplay.publish_text   = {$publish_text};\n"
-            . "SiteCommentDisplay.unpublish_text = {$unpublish_text};\n"
-            . "SiteCommentDisplay.spam_text      = {$spam_text};\n"
-            . "SiteCommentDisplay.not_spam_text  = {$not_spam_text};\n"
-            . "SiteCommentDisplay.delete_text    = {$delete_text};\n"
-            . "SiteCommentDisplay.cancel_text    = {$cancel_text};\n\n"
-            . 'SiteCommentDisplay.status_spam_text        = '
-                . "{$status_spam_text};\n"
-            . 'SiteCommentDisplay.status_pending_text     = '
-                . "{$status_pending_text};\n"
-            . 'SiteCommentDisplay.status_unpublished_text = '
-                . "{$status_unpublished_text};\n\n"
-            . 'SiteCommentDisplay.delete_confirmation_text = '
-                . "{$delete_confirmation_text};\n\n";
+                SiteCommentDisplay.status_spam_text         = {$status_spam_text};
+                SiteCommentDisplay.status_pending_text      = {$status_pending_text};
+                SiteCommentDisplay.status_unpublished_text  = {$status_unpublished_text};
+                SiteCommentDisplay.delete_confirmation_text = {$delete_confirmation_text};
+            JAVASCRIPT;
     }
 }
