@@ -7,12 +7,15 @@ use PHPUnit\Framework\Attributes\After;
 use PHPUnit\Framework\Attributes\Before;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\Attributes\Test;
+use PHPUnit\Framework\Attributes\UsesClass;
 use PHPUnit\Framework\TestCase;
 
 /**
  * @internal
  */
 #[CoversClass(SiteConfigModule::class)]
+#[UsesClass(SiteException::class)]
+#[UsesClass(SiteConfigSection::class)]
 class SiteConfigModuleTest extends TestCase
 {
     use MockeryPHPUnitIntegration;
