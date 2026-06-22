@@ -1,19 +1,19 @@
 /* Account Login page */
 
 .account-login-page #password {
-	vertical-align: middle;
+  vertical-align: middle;
 }
 
 .account-login-page #password_field a {
-	margin-left: 10px;
-	vertical-align: middle;
-	display: inline-block;
+  margin-left: 10px;
+  vertical-align: middle;
+  display: inline-block;
 }
 
 .account-login-page #new_customers_frame p {
-	margin: 0 0 1em 0;
+  margin: 0 0 1em 0;
 }
 
 .account-login-page .swat-footer-form-field .swat-button {
-	vertical-align: middle;
+  vertical-align: middle;
 }

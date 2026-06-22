@@ -7,98 +7,100 @@
  * before making radical changes to this CSS.
  */
 
-.site-tag-entry { /* set width of widget here*/
-	width: 20em;
-	margin-bottom: 1em;
+.site-tag-entry {
+  /* set width of widget here*/
+  width: 20em;
+  margin-bottom: 1em;
 }
 
 .site-tag-entry input {
-	z-index: 0;
-	vertical-align: middle;
+  z-index: 0;
+  vertical-align: middle;
 }
 
 .site-tag-entry .site-tag-autocomplete-container {
-	position: relative;
+  position: relative;
 }
 
 .site-tag-autocomplete-container {
-	margin-top: 2px;
+  margin-top: 2px;
 }
 
 .site-tag-container {
-	position: absolute;
-	top: 1.7em;
-	width: 100%
+  position: absolute;
+  top: 1.7em;
+  width: 100%;
 }
 
 .site-tag-container .yui-ac-content {
-	position: absolute;
-	width: 100%;
-	border: 1px solid #888;
-	background: #fff;
-	overflow: hidden;
-	z-index: 9050;
+  position: absolute;
+  width: 100%;
+  border: 1px solid #888;
+  background: #fff;
+  overflow: hidden;
+  z-index: 9050;
 }
 
 .site-tag-container ul {
-	margin: 0;
-	padding: 0;
-	width: 100%;
+  margin: 0;
+  padding: 0;
+  width: 100%;
 }
 
 .site-tag-container li {
-	padding: 2px 5px;
-	cursor: default;
-	white-space: nowrap;
+  padding: 2px 5px;
+  cursor: default;
+  white-space: nowrap;
 }
 
 li.site-tag-highlight {
-	background: #B5D5FF;
+  background: #b5d5ff;
 }
 
 li.site-tag-prehighlight {
-	background: #FFFFCC;
+  background: #ffffcc;
 }
 
 .site-tag-array {
-	padding: 0;
-	margin: 0.5em 0 0 0;
-	list-style-type: none;
-	width: 20em;
+  padding: 0;
+  margin: 0.5em 0 0 0;
+  list-style-type: none;
+  width: 20em;
 }
 
 .site-tag-array li {
-	margin: 0;
-	border-bottom: 1px solid #eee;
-	padding: 2px 4px;
-	list-style-type: none;
+  margin: 0;
+  border-bottom: 1px solid #eee;
+  padding: 2px 4px;
+  list-style-type: none;
 }
 
 .site-tag-array li.new-tag {
-	color: #348c28;
-	background: #dbf6d7;
-	border-bottom-color: #cae5c6;
+  color: #348c28;
+  background: #dbf6d7;
+  border-bottom-color: #cae5c6;
 }
 
 .site-tag-array li.site-tag-last {
-	border-bottom: none;
+  border-bottom: none;
 }
 
 .site-tag-entry .site-tag-entry-add-tag {
-	background: url(../../swat/images/swat-tool-link-create.png) top left no-repeat;
-	margin-left: 2px;
-	padding: 0 0 2px 16px;
-	font-size: 85%;
-	color: #438d04;
+  background: url(../../swat/images/swat-tool-link-create.png) top left
+    no-repeat;
+  margin-left: 2px;
+  padding: 0 0 2px 16px;
+  font-size: 85%;
+  color: #438d04;
 }
 
 .site-tag-entry .site-tag-entry-add-insensitive {
-	background-image: url(../../swat/images/swat-tool-link-create-insensitive.png);
-	color: #bbb;
-	text-decoration: none;
-	cursor: default;
+  background-image: url(../../swat/images/swat-tool-link-create-insensitive.png);
+  color: #bbb;
+  text-decoration: none;
+  cursor: default;
 }
 
 .site-tag-entry a {
-	font-size: 80%;
+  font-size: 80%;
 }

@@ -1,134 +1,137 @@
 .site-comment-display {
-	padding: 0;
-	margin: 0;
-	overflow: hidden;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
 }
 
 .site-comment-display .site-comment-display-content {
-	padding: 0.5em;
-	margin: 0.5em 0;
-	position: relative;
-	border-radius: 2px;
+  padding: 0.5em;
+  margin: 0.5em 0;
+  position: relative;
+  border-radius: 2px;
 }
 
 .site-comment-red .site-comment-display-content {
-	background: #ffebee;
+  background: #ffebee;
 }
 
 .site-comment-yellow .site-comment-display-content {
-	background: #fffde7;
+  background: #fffde7;
 }
 
 .site-comment-display-confirmation {
-	position: absolute;
-	background: #f7f5f3;
-	padding: 8px;
-	border-radius: 4px;
-	box-shadow: 0 0 2px rgba(0,0,0,0.12), 0 2px 2px rgba(0,0,0,0.24);
+  position: absolute;
+  background: #f7f5f3;
+  padding: 8px;
+  border-radius: 4px;
+  box-shadow:
+    0 0 2px rgba(0, 0, 0, 0.12),
+    0 2px 2px rgba(0, 0, 0, 0.24);
 }
 
 .site-comment-display-confirmation div {
-	margin-bottom: 8px;
-	color: rgba(0,0,0,0.54);
-	text-align: left;
+  margin-bottom: 8px;
+  color: rgba(0, 0, 0, 0.54);
+  text-align: left;
 }
 
 .site-comment-display .site-comment-display-controls {
-	position: absolute;
-	top: 12px;
-	right: 12px;
-	text-align: right;
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  text-align: right;
 }
 
 .site-comment-display .site-comment-display-controls input {
-	width: 7em;
-	font-size: 11px;
-	padding: 2px;
-	vertical-align: middle;
-	margin-left: 6px;
+  width: 7em;
+  font-size: 11px;
+  padding: 2px;
+  vertical-align: middle;
+  margin-left: 6px;
 }
 
 .site-comment-display .site-comment-display-controls input:first-child {
-	margin-left: 0;
+  margin-left: 0;
 }
 
 .site-comment-display .site-comment-display-confirmation input {
-	margin-left: 0;
-	margin-right: 6px;
+  margin-left: 0;
+  margin-right: 6px;
 }
 
 .site-comment-display .site-comment-display-confirmation input:last-child {
-	margin-right: 0;
+  margin-right: 0;
 }
 
 .site-comment-display h4 {
-	margin: 0.5em 0 0 0;
+  margin: 0.5em 0 0 0;
 }
 
 .site-comment-display .comment {
-	margin-left: 0.5em;
+  margin-left: 0.5em;
 }
 
 .site-comment-display .comment-link {
-	font-weight: bold;
-	color: rgba(0,0,0,0.54);
+  font-weight: bold;
+  color: rgba(0, 0, 0, 0.54);
 }
 
 .site-comment-display abbr.comment-published {
-	border-bottom: none;
+  border-bottom: none;
 }
 
 .site-comment-display .comment-title {
-	font-weight: normal;
-	color: rgba(0,0,0,0.54);
+  font-weight: normal;
+  color: rgba(0, 0, 0, 0.54);
 }
 
 .site-comment-display .comment-title .comment-author {
-	font-weight: bold;
-	color: rgba(0,0,0,0.87);
+  font-weight: bold;
+  color: rgba(0, 0, 0, 0.87);
 }
 
 .site-comment-display-actions,
 .site-comment-display-actions-no-actions-button {
-	top: -8px;
-	position: relative;
+  top: -8px;
+  position: relative;
 }
 
 .site-comment-display-actions {
-	display: none;
-	margin-right: 6em;
+  display: none;
+  margin-right: 6em;
 }
 
 .site-comment-display-actions .site-comment-display-actions-content {
-	background: #f7f5f3;
-	padding: 8px 8px;
-	display: inline-block;
-	vertical-align: middle;
-	border-radius: 4px;
-	box-shadow: 0 0 2px rgba(0,0,0,0.12), 0 2px 2px rgba(0,0,0,0.24);
+  background: #f7f5f3;
+  padding: 8px 8px;
+  display: inline-block;
+  vertical-align: middle;
+  border-radius: 4px;
+  box-shadow:
+    0 0 2px rgba(0, 0, 0, 0.12),
+    0 2px 2px rgba(0, 0, 0, 0.24);
 }
 
 .site-comment-display-actions .site-comment-display-actions-arrow {
-	display: inline-block;
-	width: 15px;
-	height: 19px;
-	position: relative;
-	left: 0;
-	vertical-align: middle;
-	background: url(../images/site-comment-display-actions-arrow.png);
+  display: inline-block;
+  width: 15px;
+  height: 19px;
+  position: relative;
+  left: 0;
+  vertical-align: middle;
+  background: url(../images/site-comment-display-actions-arrow.png);
 }
 
 .site-comment-display-actions-button {
-	float: right;
+  float: right;
 }
 
 @media (-webkit-min-device-pixel-ratio: 1.5),
-	(min--moz-device-pixel-ratio: 1.5),
-	(-o-min-device-pixel-ratio: 3/2),
-	(min-resolution: 1.5dppx) {
-
-	.site-comment-display-actions .site-comment-display-actions-arrow {
-		background-image: url(../images/site-comment-display-actions-arrow@2x.png);
-		background-size: 15px 19px;
-	}
+  (min--moz-device-pixel-ratio: 1.5),
+  (-o-min-device-pixel-ratio: 3/2),
+  (min-resolution: 1.5dppx) {
+  .site-comment-display-actions .site-comment-display-actions-arrow {
+    background-image: url(../images/site-comment-display-actions-arrow@2x.png);
+    background-size: 15px 19px;
+  }
 }

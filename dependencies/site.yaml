@@ -24,7 +24,6 @@ Site:
     - XML_RPCAjax
 
   Provides:
-
     # JavaScript resources
     packages/site/javascript/site-gravatar-entry.js:
     packages/site/javascript/site-tag-entry.js:
