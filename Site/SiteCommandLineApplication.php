@@ -341,7 +341,7 @@ abstract class SiteCommandLineApplication extends SiteApplication
                     SiteApplication::VAR_ENV
                 );
 
-                $bold = (mb_strpos($term, 'xterm') !== false);
+                $bold = str_contains($term, 'xterm');
             }
 
             if ($bold) {

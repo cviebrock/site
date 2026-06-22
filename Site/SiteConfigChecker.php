@@ -76,7 +76,7 @@ class SiteConfigChecker extends SiteCommandLineApplication
     public function addDefinitions(array $definitions)
     {
         foreach ($definitions as $qualified_name => $default_value) {
-            if (mb_strpos($qualified_name, '.') === false) {
+            if (!str_contains($qualified_name, '.')) {
                 throw new SiteException(sprintf(
                     "Qualified name of configuration definition '%s' must be "
                     . 'of the form section.name.',

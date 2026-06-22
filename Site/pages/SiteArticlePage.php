@@ -213,7 +213,7 @@ class SiteArticlePage extends SitePathPage
     final protected function replaceMarkers($text)
     {
         $marker_pattern = '/<!-- \[(.*?)\] -->/u';
-        $callback = [$this, 'getReplacementMarkerTextByMatches'];
+        $callback = $this->getReplacementMarkerTextByMatches(...);
 
         return preg_replace_callback($marker_pattern, $callback, $text);
     }

@@ -536,7 +536,7 @@ class SiteAnalyticsModule extends SiteApplicationModule
 
         return sprintf(
             'fbq(%s);',
-            implode(', ', array_map('json_encode', $command))
+            implode(', ', array_map(json_encode(...), $command))
         );
     }
 }

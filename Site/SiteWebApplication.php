@@ -614,7 +614,7 @@ class SiteWebApplication extends SiteApplication
             $uri = $this->session->appendSessionId($uri, $append_sid);
         }
 
-        if (mb_substr($uri, 0, 1) != '/' && mb_strpos($uri, '://') === false) {
+        if (mb_substr($uri, 0, 1) != '/' && !str_contains($uri, '://')) {
             $uri = $this->getBaseHref() . $uri;
         }
 
@@ -651,7 +651,7 @@ class SiteWebApplication extends SiteApplication
         $query_string = parse_url($_SERVER['REQUEST_URI'], PHP_URL_QUERY);
 
         if ($query_string !== null) {
-            $concatenator = (mb_strpos($uri, '?') === false)
+            $concatenator = (!str_contains($uri, '?'))
                 ? '?'
                 : '&';
 
