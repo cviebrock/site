@@ -17,13 +17,13 @@ class SiteConfigModuleTest extends TestCase
 {
     use MockeryPHPUnitIntegration;
 
-    /** @var string[] */
+    /** @var list<string> */
     private array $temp_ini_files = [];
 
-    /** @var string[] */
+    /** @var list<string> */
     private array $modified_env_vars = [];
 
-    /** @var array<string,string> */
+    /** @var array<string, string> */
     private array $original_env = [];
 
     #[Before]

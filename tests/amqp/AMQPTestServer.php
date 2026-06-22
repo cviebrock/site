@@ -21,6 +21,8 @@ class AMQPTestServer extends SiteAMQPApplication
 
     protected function getDefaultModuleList()
     {
-        return ['config' => 'SiteConfigModule'];
+        return [
+            'config' => 'SiteConfigModule',
+        ];
     }
 }

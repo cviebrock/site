@@ -37,6 +37,9 @@ class AMQPTestClient extends SiteCommandLineApplication
 
     protected function getDefaultModuleList()
     {
-        return ['config' => 'SiteConfigModule', 'amqp' => 'SiteAMQPModule'];
+        return [
+            'config' => 'SiteConfigModule',
+            'amqp'   => 'SiteAMQPModule',
+        ];
     }
 }

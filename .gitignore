@@ -9,7 +9,7 @@ node_modules/
 .env
 .idea/
 .php-cs-fixer.cache
-.phpunit.cache/
+.phpunit.result.cache
 *.swp
 
 # dependency lock file
