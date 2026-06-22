@@ -95,12 +95,12 @@ class SiteArticleSearch extends AdminSearch
 
         $this->ui->getWidget('results_frame')->visible = true;
         $view = $this->ui->getWidget('index_view');
-        $view->getColumn('visibility')->getRendererByPosition()->db =
-            $this->app->db;
+        $view->getColumn('visibility')->getRendererByPosition()->db
+            = $this->app->db;
 
         if (count($rs) > 0) {
-            $this->ui->getWidget('results_message')->content =
-                $pager->getResultsMessage(
+            $this->ui->getWidget('results_message')->content
+                = $pager->getResultsMessage(
                     Site::_('result'),
                     Site::_('results')
                 );
@@ -169,14 +169,14 @@ class SiteArticleSearch extends AdminSearch
             }
 
             $clause = new AdminSearchClause('boolean:visible');
-            $clause->value =
-                $this->ui->getWidget('search_visible')->value;
+            $clause->value
+                = $this->ui->getWidget('search_visible')->value;
 
             $where .= $clause->getClause($this->app->db);
 
             $clause = new AdminSearchClause('boolean:searchable');
-            $clause->value =
-                $this->ui->getWidget('search_searchable')->value;
+            $clause->value
+                = $this->ui->getWidget('search_searchable')->value;
 
             $where .= $clause->getClause($this->app->db);
 
@@ -200,8 +200,8 @@ class SiteArticleSearch extends AdminSearch
                 );
             }
 
-            $this->order_by_clause =
-                parent::getOrderByClause($view, $order_by_clause);
+            $this->order_by_clause
+                = parent::getOrderByClause($view, $order_by_clause);
         }
 
         return $this->order_by_clause;

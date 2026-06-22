@@ -49,14 +49,14 @@ class SiteMemcacheModule extends SiteApplicationModule implements SwatDBCacheNsF
     public function init()
     {
         if (!extension_loaded('memcached')) {
-            throw new SiteException('Memcache module requires the memcached ' .
-                'extension to be loaded.');
+            throw new SiteException('Memcache module requires the memcached '
+                . 'extension to be loaded.');
         }
 
         if ($this->app_ns == '') {
-            throw new SiteException('Application namespace ' .
-                '(SiteMemcacheModule::$app_ns) must be set to initialize the ' .
-                'memcache module.');
+            throw new SiteException('Application namespace '
+                . '(SiteMemcacheModule::$app_ns) must be set to initialize the '
+                . 'memcache module.');
         }
 
         $this->memcached = new Memcached();

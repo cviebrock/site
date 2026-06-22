@@ -52,9 +52,9 @@ class SiteMediaCdnTask extends SiteCdnTask
 
     protected function getLocalFilePath()
     {
-        return ($this->hasMediaAndEncoding()) ?
-            $this->media->getFilePath($this->encoding->shortname) :
-            null;
+        return ($this->hasMediaAndEncoding())
+            ? $this->media->getFilePath($this->encoding->shortname)
+            : null;
     }
 
     protected function copy(SiteCdnModule $cdn)

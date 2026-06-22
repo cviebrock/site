@@ -40,9 +40,9 @@ class SiteDatabaseModule extends SiteApplicationModule
             throw new SwatDBException($this->connection);
         }
 
-        $this->connection->options['portability'] =
-            $this->connection->options['portability'] ^
-                MDB2_PORTABILITY_EMPTY_TO_NULL;
+        $this->connection->options['portability']
+            = $this->connection->options['portability']
+                ^ MDB2_PORTABILITY_EMPTY_TO_NULL;
 
         $this->setupEnumMapping();
 

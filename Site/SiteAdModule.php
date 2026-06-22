@@ -158,8 +158,7 @@ class SiteAdModule extends SiteApplicationModule
         $depends[] = new SiteApplicationModuleDependency('SiteSessionModule');
 
         if ($this->app->hasModule('SiteCookieModule')) {
-            $depends[] =
-                new SiteApplicationModuleDependency('SiteCookieModule');
+            $depends[] = new SiteApplicationModuleDependency('SiteCookieModule');
         }
 
         return $depends;
@@ -256,10 +255,11 @@ class SiteAdModule extends SiteApplicationModule
                 if (isset($cookie_module->ad_network)) {
                     $ad_network = $cookie_module->ad_network;
                 }
-            } elseif ($this->app->getModule('SiteSessionModule')->isActive()
-                && isset($this->app->getModule('SiteSessionModule')->ad_network)) {
-                $ad_network =
-                    $this->app->getModule('SiteSessionModule')->ad_network;
+            } elseif (
+                $this->app->getModule('SiteSessionModule')->isActive()
+                && isset($this->app->getModule('SiteSessionModule')->ad_network)
+            ) {
+                $ad_network = $this->app->getModule('SiteSessionModule')->ad_network;
             }
         }
 
@@ -357,8 +357,7 @@ class SiteAdModule extends SiteApplicationModule
 
         // truncate HTTP referrer to 255 characters
         if ($ad_referrer->http_referer !== null) {
-            $ad_referrer->http_referer =
-                mb_substr($ad_referrer->http_referer, 0, 255);
+            $ad_referrer->http_referer = mb_substr($ad_referrer->http_referer, 0, 255);
         }
 
         $ad_referrer->ad = $ad;

@@ -57,8 +57,8 @@ abstract class SiteApiSignOnPage extends SitePage
         )) {
             throw new SiteApiSignOnException(
                 sprintf(
-                    'An API sign on token with the ident “%s” ' .
-                    'and token “%s” does not exist.',
+                    'An API sign on token with the ident “%s” '
+                    . 'and token “%s” does not exist.',
                     $ident,
                     $token_string
                 )

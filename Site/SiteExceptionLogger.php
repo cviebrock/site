@@ -115,11 +115,11 @@ class SiteExceptionLogger extends SwatExceptionLogger
     protected function getSummary(SwatException $e, $directory, $id)
     {
         if ($this->base_uri === null) {
-            $summary = $e->getClass() . ': ' .
-                $this->getLogFilePath($directory, $id);
+            $summary = $e->getClass() . ': '
+                . $this->getLogFilePath($directory, $id);
         } else {
-            $summary = $e->getClass() . ': ' . $this->base_uri . '/' .
-                $directory . '/' . $this->getLogFilename($id);
+            $summary = $e->getClass() . ': ' . $this->base_uri . '/'
+                . $directory . '/' . $this->getLogFilename($id);
         }
 
         return $summary;
@@ -136,8 +136,8 @@ class SiteExceptionLogger extends SwatExceptionLogger
         echo '<html xmlns="http://www.w3.org/1999/xhtml" ',
         'xml:lang="en" lang="en">', "\n";
 
-        echo '<head><meta http-equiv="Content-Type" ' .
-            'content="text/html; charset=UTF-8" /></head><body>', "\n";
+        echo '<head><meta http-equiv="Content-Type" '
+            . 'content="text/html; charset=UTF-8" /></head><body>', "\n";
 
         echo '<table>', "\n";
 

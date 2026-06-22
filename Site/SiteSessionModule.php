@@ -326,8 +326,8 @@ class SiteSessionModule extends SiteApplicationModule
          * provide a slightly different user agent to scripts.
          */
         if (isset($_SERVER['HTTP_USER_AGENT'], $this->_user_agent)
-            && str_replace(' ', '', $this->_user_agent) !==
-                str_replace(' ', '', $_SERVER['HTTP_USER_AGENT'])) {
+            && str_replace(' ', '', $this->_user_agent)
+                !== str_replace(' ', '', $_SERVER['HTTP_USER_AGENT'])) {
             /*
              * Clean and relocate to the current URI if it has a session ID
              * in it. SwatWebApplication::getUri() can not be used here since
@@ -415,8 +415,8 @@ class SiteSessionModule extends SiteApplicationModule
         }
 
         if ($parameters !== null && !is_array($parameters)) {
-            throw new SiteException('Callback parameters must be specified ' .
-                'in an array.');
+            throw new SiteException('Callback parameters must be specified '
+                . 'in an array.');
         }
 
         $this->regenerate_id_callbacks[] = ['callback' => $callback, 'parameters' => $parameters];
@@ -618,8 +618,8 @@ class SiteSessionModule extends SiteApplicationModule
             $class = $data['class'];
             if (!class_exists($class)) {
                 throw new SwatClassNotFoundException(sprintf(
-                    'The class "%s" does not exist. The class definition must ' .
-                    'be loaded before the session is restored.',
+                    'The class "%s" does not exist. The class definition must '
+                    . 'be loaded before the session is restored.',
                     $class
                 ), 0, $class);
             }

@@ -32,12 +32,12 @@ class SiteContactMessageDeleter extends SitePrivateDataDeleter
                     $delete_count
                 ));
             } else {
-                $this->app->debug(' ' .
-                    Site::_('=> not deleting because dry-run is on'));
+                $this->app->debug(' '
+                    . Site::_('=> not deleting because dry-run is on'));
             }
 
-            $this->app->debug("\n" .
-                Site::_('Finished deleting expired contact messages.') . "\n");
+            $this->app->debug("\n"
+                . Site::_('Finished deleting expired contact messages.') . "\n");
         }
     }
 
@@ -66,8 +66,8 @@ class SiteContactMessageDeleter extends SitePrivateDataDeleter
 
     protected function getExpiryDate()
     {
-        $unix_time =
-            strtotime('-' . $this->app->config->expiry->contact_messages);
+        $unix_time
+            = strtotime('-' . $this->app->config->expiry->contact_messages);
 
         $expiry_date = new SwatDate();
         $expiry_date->setTimestamp($unix_time);

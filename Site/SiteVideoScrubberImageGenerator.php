@@ -134,8 +134,8 @@ class SiteVideoScrubberImageGenerator extends SiteCommandLineApplication
                 $path = null;
             }
         } else {
-            $message = "Encoding '" . $encoding_shortname . "' not found for " .
-                'media ' . $media->id;
+            $message = "Encoding '" . $encoding_shortname . "' not found for "
+                . 'media ' . $media->id;
 
             $exception = new SiteCommandLineException($message);
             $exception->processAndContinue();

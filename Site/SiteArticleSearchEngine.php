@@ -23,8 +23,8 @@ class SiteArticleSearchEngine extends SiteSearchEngine
         $clause = 'from Article';
 
         if ($this->fulltext_result !== null) {
-            $clause .= ' ' .
-                $this->fulltext_result->getJoinClause(
+            $clause .= ' '
+                . $this->fulltext_result->getJoinClause(
                     'Article.id',
                     'article'
                 );
@@ -46,8 +46,8 @@ class SiteArticleSearchEngine extends SiteSearchEngine
         if ($this->fulltext_result === null) {
             $clause = sprintf('order by Article.title');
         } else {
-            $clause =
-                $this->fulltext_result->getOrderByClause('Article.title');
+            $clause
+                = $this->fulltext_result->getOrderByClause('Article.title');
         }
 
         return $clause;

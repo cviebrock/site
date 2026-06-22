@@ -361,8 +361,8 @@ class SiteAccount extends SwatDBDataObject
                 $this->db->quote($this->id, 'integer')
             );
 
-            $this->suspicious_activity =
-                SwatDB::query($this->db, $sql)->getFirst();
+            $this->suspicious_activity
+                = SwatDB::query($this->db, $sql)->getFirst();
         }
 
         return $this->suspicious_activity;
@@ -389,8 +389,8 @@ class SiteAccount extends SwatDBDataObject
         $locale = SwatI18NLocale::get();
 
         return sprintf(
-            Site::_('In the last week: %s logins from %s IPs' .
-            ' and %s different browsers.'),
+            Site::_('In the last week: %s logins from %s IPs'
+            . ' and %s different browsers.'),
             $locale->formatNumber($activity->login_count),
             $locale->formatNumber($activity->ip_address_count),
             $locale->formatNumber($activity->user_agent_count)
@@ -619,9 +619,9 @@ class SiteAccount extends SwatDBDataObject
     {
         if ($this->password_tag == '') {
             throw new SiteException(Site::_(
-                'This account’s password tag has not been set. ' .
-                'Before a reset password mail message can be sent ' .
-                'resetPassword() must be called.'
+                'This account’s password tag has not been set. '
+                . 'Before a reset password mail message can be sent '
+                . 'resetPassword() must be called.'
             ));
         }
 
@@ -654,8 +654,8 @@ class SiteAccount extends SwatDBDataObject
 
     protected function getResetPasswordUri(SiteApplication $app)
     {
-        return $app->getBaseHref() . 'account/resetpassword/' .
-            $this->password_tag;
+        return $app->getBaseHref() . 'account/resetpassword/'
+            . $this->password_tag;
     }
 
     protected function getResetPasswordValues()
@@ -722,9 +722,9 @@ class SiteAccount extends SwatDBDataObject
     {
         if ($this->unencrypted_password == '') {
             throw new SiteException(Site::_(
-                'This account’s password has not been updated. ' .
-                'Before a new password mail message can be sent ' .
-                'generatePassword() must be called.'
+                'This account’s password has not been updated. '
+                . 'Before a new password mail message can be sent '
+                . 'generatePassword() must be called.'
             ));
         }
 

@@ -46,8 +46,8 @@ class SiteAmazonCdnMediaManifestPage extends SitePage
         )->getFirst();
 
         if ($this->media === null) {
-            throw new SiteNotFoundException('Media not found for id:' .
-                $media_id);
+            throw new SiteNotFoundException('Media not found for id:'
+                . $media_id);
         }
 
         $this->media->setFileBase('media');

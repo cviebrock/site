@@ -309,9 +309,9 @@ class SiteAttachment extends SwatDBDataObject
         $filename = iconv(
             'UTF-8',
             'ASCII//TRANSLIT',
-            ($this->human_filename != '') ?
-                $this->human_filename :
-                $this->original_filename
+            ($this->human_filename != '')
+                ? $this->human_filename
+                : $this->original_filename
         );
 
         // Format the filename according to the qtext syntax in RFC 822
@@ -334,11 +334,11 @@ class SiteAttachment extends SwatDBDataObject
         $loaded = parent::load($id);
 
         if ($loaded && $this->attachment_set_shortname !== null) {
-            if ($this->attachment_set->shortname !==
-                $this->attachment_set_shortname) {
-                throw new SiteException('Trying to load attachment with the ' .
-                    'wrong attachment set. This may happen if the wrong ' .
-                    'wrapper class is used.');
+            if ($this->attachment_set->shortname
+                !== $this->attachment_set_shortname) {
+                throw new SiteException('Trying to load attachment with the '
+                    . 'wrong attachment set. This may happen if the wrong '
+                    . 'wrapper class is used.');
             }
         }
 
@@ -387,10 +387,10 @@ class SiteAttachment extends SwatDBDataObject
         $this->checkDB();
 
         if ($this->attachment_set_shortname == '') {
-            throw new SiteException('To process this attachment, a ' .
-                'SiteAttachmentType shortname must be set for the ' .
-                '$attachment_set_shortname property of this object. Usually ' .
-                'a default value is set in the class definition.');
+            throw new SiteException('To process this attachment, a '
+                . 'SiteAttachmentType shortname must be set for the '
+                . '$attachment_set_shortname property of this object. Usually '
+                . 'a default value is set in the class definition.');
         }
 
         $class_name = SwatDBClassMap::get(SiteAttachmentSet::class);

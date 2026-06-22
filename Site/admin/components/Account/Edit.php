@@ -64,8 +64,8 @@ class SiteAccountEdit extends AdminDBEdit
             return;
         }
 
-        $instance = ($this->app->hasModule('SiteMultipleInstanceModule')) ?
-            $this->app->instance->getInstance() : null;
+        $instance = ($this->app->hasModule('SiteMultipleInstanceModule'))
+            ? $this->app->instance->getInstance() : null;
 
         $class_name = SwatDBClassMap::get(SiteAccount::class);
         $account = new $class_name();

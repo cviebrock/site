@@ -106,8 +106,8 @@ abstract class SiteCommandLineApplication extends SiteApplication
         $documentation = null
     ) {
         if (!isset($_SERVER['argv'])) {
-            throw new SiteCommandLineException('Command line applications ' .
-                'must be run from the command line.');
+            throw new SiteCommandLineException('Command line applications '
+                . 'must be run from the command line.');
         }
 
         parent::__construct($id, $config_filename);
@@ -128,8 +128,8 @@ abstract class SiteCommandLineApplication extends SiteApplication
         $verbosity = new SiteCommandLineArgument(
             ['-v', '--verbose'],
             'setVerbosity',
-            Site::_('Sets the level of verbosity of this application. Pass 0 ' .
-                'to turn off all output.')
+            Site::_('Sets the level of verbosity of this application. Pass 0 '
+                . 'to turn off all output.')
         );
 
         $verbosity->addParameter(

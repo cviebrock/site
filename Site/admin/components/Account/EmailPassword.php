@@ -65,8 +65,8 @@ class SiteAccountEmailPassword extends AdminConfirmation
             $this->account->sendGeneratePasswordMailMessage($this->app);
 
             $message = new SwatMessage(sprintf(
-                Site::_('%1$s’s password has been reset and has been emailed ' .
-                'to <a href="mailto:%2$s">%2$s</a>.'),
+                Site::_('%1$s’s password has been reset and has been emailed '
+                . 'to <a href="mailto:%2$s">%2$s</a>.'),
                 SwatString::minimizeEntities($this->account->getFullname()),
                 SwatString::minimizeEntities($this->account->email)
             ));
@@ -101,8 +101,8 @@ class SiteAccountEmailPassword extends AdminConfirmation
         $message->content = $this->getConfirmationMessage();
         $message->content_type = 'text/xml';
 
-        $this->ui->getWidget('yes_button')->title =
-            Site::_('Reset & Email Password');
+        $this->ui->getWidget('yes_button')->title
+            = Site::_('Reset & Email Password');
     }
 
     protected function getConfirmationMessage()

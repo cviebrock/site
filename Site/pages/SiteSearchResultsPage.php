@@ -270,8 +270,8 @@ class SiteSearchResultsPage extends SiteArticlePage
                 // for display
                 $corrected_string = str_ireplace(
                     ' ' . SwatString::minimizeEntities($misspelling) . ' ',
-                    ' <strong>' . SwatString::minimizeEntities($correction) .
-                    '</strong> ',
+                    ' <strong>' . SwatString::minimizeEntities($correction)
+                    . '</strong> ',
                     $corrected_string
                 );
             }

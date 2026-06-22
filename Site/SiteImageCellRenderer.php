@@ -164,8 +164,8 @@ class SiteImageCellRenderer extends SwatCellRenderer
 
     protected function buildImageCellRenderer(SwatImageCellRenderer $renderer)
     {
-        $renderer->image =
-            $this->image->getUri($this->image_dimension, $this->path_prefix);
+        $renderer->image
+            = $this->image->getUri($this->image_dimension, $this->path_prefix);
 
         $renderer->width = $this->image->getWidth($this->image_dimension);
         $renderer->height = $this->image->getHeight($this->image_dimension);

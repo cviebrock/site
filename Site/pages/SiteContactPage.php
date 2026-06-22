@@ -130,8 +130,8 @@ class SiteContactPage extends SiteDBEditPage
 
         $message->secondary_content = sprintf(
             Site::_(
-                'If this issue persists, or your message is time sensitive, ' .
-                'please send an email directly to %s.'
+                'If this issue persists, or your message is time sensitive, '
+                . 'please send an email directly to %s.'
             ),
             $this->getContactAddressLink()
         );

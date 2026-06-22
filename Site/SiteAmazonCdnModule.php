@@ -115,8 +115,8 @@ class SiteAmazonCdnModule extends SiteCdnModule
         $distribution_key_pair_id = null
     ) {
         if (file_exists($distribution_private_key_file)) {
-            $this->distribution_private_key_file =
-                $distribution_private_key_file;
+            $this->distribution_private_key_file
+                = $distribution_private_key_file;
         } else {
             throw new SiteCdnException(
                 sprintf(
@@ -196,8 +196,8 @@ class SiteAmazonCdnModule extends SiteCdnModule
                 $header_options['ContentType'] = $headers['Content-Type'];
             }
             if (isset($headers['Content-Disposition'])) {
-                $header_options['ContentDisposition'] =
-                    $headers['Content-Disposition'];
+                $header_options['ContentDisposition']
+                    = $headers['Content-Disposition'];
             }
         }
 
@@ -385,16 +385,16 @@ class SiteAmazonCdnModule extends SiteCdnModule
             || !$this->cf instanceof CloudFrontClient
         ) {
             throw new SwatException(
-                'CloudFront must be enabled to get CloudFront URIs in the ' .
-                'Amazon CDN module'
+                'CloudFront must be enabled to get CloudFront URIs in the '
+                . 'Amazon CDN module'
             );
         }
 
         if ($streaming) {
             if (!$this->hasStreamingDistribution()) {
                 throw new SwatException(
-                    'Streaming distribution must be specified for streaming ' .
-                    'URIs in the Amazon CDN module'
+                    'Streaming distribution must be specified for streaming '
+                    . 'URIs in the Amazon CDN module'
                 );
             }
 

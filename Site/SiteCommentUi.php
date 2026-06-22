@@ -279,8 +279,8 @@ abstract class SiteCommentUi
 
                 case SiteCommentStatus::MODERATED:
                     $message = new SwatMessage($this->getMessage('moderated'));
-                    $message->secondary_content =
-                        $this->getMessage('moderated-subtitle');
+                    $message->secondary_content
+                        = $this->getMessage('moderated-subtitle');
 
                     $this->ui->getWidget('message_display')->add(
                         $message,
@@ -347,14 +347,14 @@ abstract class SiteCommentUi
     {
         return match ($shortname) {
             'preview-message'          => Site::_('Your comment has not yet been published.'),
-            'preview-message-subtitle' => Site::_('Review your comment and press the <em>Post</em> ' .
-                      'button when it’s ready to publish. %s'),
+            'preview-message-subtitle' => Site::_('Review your comment and press the <em>Post</em> '
+                      . 'button when it’s ready to publish. %s'),
             'locked'             => Site::_('Comments are locked'),
             'locked-subtitle'    => Site::_('No new comments may be posted for this article.'),
             'published'          => Site::_('Your comment has been published.'),
             'moderated'          => Site::_('Your comment has been submitted.'),
-            'moderated-subtitle' => Site::_('Your comment will be published after being ' .
-                      'approved by the site moderator.'),
+            'moderated-subtitle' => Site::_('Your comment will be published after being '
+                      . 'approved by the site moderator.'),
             default => null,
         };
     }

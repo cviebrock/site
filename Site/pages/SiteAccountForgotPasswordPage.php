@@ -29,8 +29,8 @@ class SiteAccountForgotPasswordPage extends SiteUiPage
 
         if ($this->app->session instanceof SiteAccountSessionModule
             && $this->app->session->isLoggedIn()) {
-            $this->ui->getWidget('email')->value =
-                $this->app->session->account->email;
+            $this->ui->getWidget('email')->value
+                = $this->app->session->account->email;
         }
     }
 
@@ -69,8 +69,8 @@ class SiteAccountForgotPasswordPage extends SiteUiPage
      */
     protected function getAccount($email)
     {
-        $instance = ($this->app->hasModule('SiteMultipleInstanceModule')) ?
-            $this->app->instance->getInstance() : null;
+        $instance = ($this->app->hasModule('SiteMultipleInstanceModule'))
+            ? $this->app->instance->getInstance() : null;
 
         $class_name = SwatDBClassMap::get(SiteAccount::class);
         $account = new $class_name();
@@ -110,8 +110,8 @@ class SiteAccountForgotPasswordPage extends SiteUiPage
 
         $message->secondary_content = sprintf(
             Site::_(
-                'Make sure you entered it correctly, or ' .
-                '%screate a New Account%s.'
+                'Make sure you entered it correctly, or '
+                . '%screate a New Account%s.'
             ),
             '<a href="account/edit">',
             '</a>'

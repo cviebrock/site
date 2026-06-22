@@ -134,8 +134,8 @@ class SiteCookieModule extends SiteApplicationModule
         }
 
         try {
-            $value =
-                SwatString::signedUnserialize($_COOKIE[$name], $this->salt);
+            $value
+                = SwatString::signedUnserialize($_COOKIE[$name], $this->salt);
         } catch (SwatInvalidSerializedDataException $e) {
             // Ignore common cookie values used to remove cookies.
             $ignored_values = [0, ''];

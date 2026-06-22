@@ -164,8 +164,8 @@ class SiteArticle extends SwatDBDataObject
                     $path .= '/' . $row->shortname;
                 }
 
-                $this->navbar_entries[] =
-                    new SwatNavBarEntry($row->title, $path);
+                $this->navbar_entries[]
+                    = new SwatNavBarEntry($row->title, $path);
             }
         }
 

@@ -265,8 +265,8 @@ class SiteAMQPModule extends SiteApplicationModule
         // read timeout occurred
         if ($response === null) {
             throw new SiteAMQPJobFailureException(
-                'Did not receive response from AMQP job processor before ' .
-                'timeout.'
+                'Did not receive response from AMQP job processor before '
+                . 'timeout.'
             );
         }
 

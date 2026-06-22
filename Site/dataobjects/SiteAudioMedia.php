@@ -93,12 +93,12 @@ class SiteAudioMedia extends SiteMedia
 
         // Run just the ffprobe first, so we can check its return code.
         $command = sprintf(
-            '%s ' .
-                '-print_format json ' .
-                '-select_streams a ' .
-                '-show_entries format=format_name:format=duration ' .
-                '-v quiet ' .
-                '%s ',
+            '%s '
+                . '-print_format json '
+                . '-select_streams a '
+                . '-show_entries format=format_name:format=duration '
+                . '-v quiet '
+                . '%s ',
             $bin,
             escapeshellarg($file_path)
         );
@@ -124,16 +124,16 @@ class SiteAudioMedia extends SiteMedia
 
             if ($duration === null) {
                 throw new SiteException(
-                    'Audio media duration lookup with ffprobe failed. ' .
-                    'Unable to parse format or duration from output.'
+                    'Audio media duration lookup with ffprobe failed. '
+                    . 'Unable to parse format or duration from output.'
                 );
             }
         } else {
             throw new SiteException(
                 sprintf(
-                    "Audio media duration lookup with ffprobe failed.\n\n" .
-                    "Ran command:\n%s\n\n" .
-                    "With return code:\n%s",
+                    "Audio media duration lookup with ffprobe failed.\n\n"
+                    . "Ran command:\n%s\n\n"
+                    . "With return code:\n%s",
                     $command,
                     $returned_value
                 )
@@ -158,8 +158,8 @@ class SiteAudioMedia extends SiteMedia
 
             if ($duration === null) {
                 throw new SiteException(
-                    'Audio media duration lookup with ffprobe failed. ' .
-                    'Unable to parse duration from output.'
+                    'Audio media duration lookup with ffprobe failed. '
+                    . 'Unable to parse duration from output.'
                 );
             }
         }
@@ -201,13 +201,13 @@ class SiteAudioMedia extends SiteMedia
         $duration = null;
 
         $command = sprintf(
-            '%s ' .
-                '-print_format json ' .
-                '-read_intervals %s%% ' .
-                '-select_streams a ' .
-                '-show_entries packet=pts_time ' .
-                '-v quiet ' .
-                '%s ',
+            '%s '
+                . '-print_format json '
+                . '-read_intervals %s%% '
+                . '-select_streams a '
+                . '-show_entries packet=pts_time '
+                . '-v quiet '
+                . '%s ',
             $bin,
             escapeshellarg($offset),
             escapeshellarg($file_path)
@@ -232,10 +232,10 @@ class SiteAudioMedia extends SiteMedia
         } else {
             throw new SiteException(
                 sprintf(
-                    'Audio media duration lookup with ffprobe ' .
-                    "failed.\n\n" .
-                    "Ran command:\n%s\n\n" .
-                    "With return code:\n%s",
+                    'Audio media duration lookup with ffprobe '
+                    . "failed.\n\n"
+                    . "Ran command:\n%s\n\n"
+                    . "With return code:\n%s",
                     $command,
                     $returned_value
                 )

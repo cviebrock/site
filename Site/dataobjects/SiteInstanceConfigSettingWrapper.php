@@ -11,7 +11,7 @@ class SiteInstanceConfigSettingWrapper extends SwatDBRecordsetWrapper
     protected function init()
     {
         parent::init();
-        $this->row_wrapper_class =
-            SwatDBClassMap::get(SiteInstanceConfigSetting::class);
+        $this->row_wrapper_class
+            = SwatDBClassMap::get(SiteInstanceConfigSetting::class);
     }
 }

@@ -48,8 +48,8 @@ class SiteArticlePage extends SitePathPage
     protected function initArticle()
     {
         if (!$this->article instanceof SiteArticle) {
-            throw new SiteException('SiteArticlePage must have an article ' .
-                'set.');
+            throw new SiteException('SiteArticlePage must have an article '
+                . 'set.');
         }
 
         $this->layout->selected_article_id = $this->article->id;
@@ -69,8 +69,8 @@ class SiteArticlePage extends SitePathPage
 
     protected function buildTitle()
     {
-        $this->layout->data->title =
-            SwatString::minimizeEntities((string) $this->article->title);
+        $this->layout->data->title
+            = SwatString::minimizeEntities((string) $this->article->title);
 
         // If HTML title is set, set the layout HTML title
         if ($this->article->html_title != '') {
@@ -85,13 +85,13 @@ class SiteArticlePage extends SitePathPage
         parent::buildMetaDescription();
 
         if ($this->article->description === null) {
-            $this->layout->data->meta_description =
-                SwatString::minimizeEntities(SwatString::condense(
+            $this->layout->data->meta_description
+                = SwatString::minimizeEntities(SwatString::condense(
                     SwatString::stripXHTMLTags($this->article->bodytext)
                 ));
         } else {
-            $this->layout->data->meta_description =
-                SwatString::minimizeEntities($this->article->description);
+            $this->layout->data->meta_description
+                = SwatString::minimizeEntities($this->article->description);
         }
     }
 

@@ -36,8 +36,8 @@ abstract class SiteVideoMediaMover extends SiteCommandLineApplication
                 ['--clean-up'],
                 'setCleanUp',
                 Site::_(
-                    'This removes the old file so we are essentially renaming ' .
-                    'instead of copying.'
+                    'This removes the old file so we are essentially renaming '
+                    . 'instead of copying.'
                 )
             )
         );

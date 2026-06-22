@@ -118,8 +118,8 @@ class SiteArticleIndex extends AdminIndex
             $articles_frame->parent->remove($articles_frame);
             $details_frame->add($articles_frame);
             $articles_frame->title = Site::_('Sub-Articles');
-            $this->ui->getWidget('articles_new')->title =
-                Site::_('New Sub-Article');
+            $this->ui->getWidget('articles_new')->title
+                = Site::_('New Sub-Article');
 
             $this->buildDetails();
         }
@@ -143,18 +143,18 @@ class SiteArticleIndex extends AdminIndex
         // set default time zone
         $createdate_field = $details_view->getField('createdate');
         $createdate_renderer = $createdate_field->getFirstRenderer();
-        $createdate_renderer->display_time_zone =
-            $this->app->default_time_zone;
+        $createdate_renderer->display_time_zone
+            = $this->app->default_time_zone;
 
         $modified_date_field = $details_view->getField('modified_date');
-        $modified_date_renderer =
-            $modified_date_field->getRendererByPosition();
+        $modified_date_renderer
+            = $modified_date_field->getRendererByPosition();
 
-        $modified_date_renderer->display_time_zone =
-            $this->app->default_time_zone;
+        $modified_date_renderer->display_time_zone
+            = $this->app->default_time_zone;
 
-        $details_view->getField('visibility')->getFirstRenderer()->db =
-            $this->app->db;
+        $details_view->getField('visibility')->getFirstRenderer()->db
+            = $this->app->db;
 
         if ($this->article->bodytext !== null) {
             $this->article->bodytext = SwatString::condense(SwatString::toXHTML(
@@ -163,8 +163,8 @@ class SiteArticleIndex extends AdminIndex
         }
 
         if ($this->article->description !== null) {
-            $this->article->description =
-                SwatString::condense(SwatString::toXHTML(
+            $this->article->description
+                = SwatString::condense(SwatString::toXHTML(
                     $this->article->description
                 ));
         }

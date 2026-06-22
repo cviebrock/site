@@ -39,8 +39,8 @@ class SiteContactMailer extends SiteCommandLineApplication
         $instance = new SiteCommandLineArgument(
             ['-i', '--instance'],
             'setInstance',
-            'Required. Sets the site instance for which to ' .
-            'run this application.'
+            'Required. Sets the site instance for which to '
+            . 'run this application.'
         );
 
         $instance->addParameter(
@@ -53,10 +53,10 @@ class SiteContactMailer extends SiteCommandLineApplication
         $debug_domain = new SiteCommandLineArgument(
             ['-d', '--debug-domain'],
             'setDebugDomain',
-            Site::_('Sets this mailer to debug mode. When set, only ' .
-                'messages with email addresses ending in the specified ' .
-                'domain are sent, and the messages are not marked as sent ' .
-                'so they may be sent multiple times.')
+            Site::_('Sets this mailer to debug mode. When set, only '
+                . 'messages with email addresses ending in the specified '
+                . 'domain are sent, and the messages are not marked as sent '
+                . 'so they may be sent multiple times.')
         );
 
         $debug_domain->addParameter(

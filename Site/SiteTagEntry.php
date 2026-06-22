@@ -149,8 +149,8 @@ abstract class SiteTagEntry extends SwatInputControl implements SwatState
 
             foreach ($tag_strings as $string) {
                 if (isset($this->tag_array[$string])) {
-                    $this->selected_tag_array[$string] =
-                        $this->tag_array[$string];
+                    $this->selected_tag_array[$string]
+                        = $this->tag_array[$string];
                 } else {
                     $this->selected_tag_array[$string] = $string;
                 }
@@ -313,8 +313,8 @@ abstract class SiteTagEntry extends SwatInputControl implements SwatState
         }
 
         $javascript .= sprintf(
-            'var %1$s_obj = new %2$s(' .
-            "'%1\$s', %3\$s, [%4\$s], %5\$s);",
+            'var %1$s_obj = new %2$s('
+            . "'%1\$s', %3\$s, [%4\$s], %5\$s);",
             $this->id,
             $this->getJavaScriptClassName(),
             $data_store,
@@ -352,9 +352,9 @@ abstract class SiteTagEntry extends SwatInputControl implements SwatState
         $new_text = SwatString::quoteJavaScriptString(Site::_('(new)'));
         $add_text = SwatString::quoteJavaScriptString(Site::_('Add Tag'));
 
-        return "SiteTagEntry.remove_text = {$remove_text};\n" .
-            "SiteTagEntry.new_text    = {$new_text};\n" .
-            "SiteTagEntry.add_text    = {$add_text};\n";
+        return "SiteTagEntry.remove_text = {$remove_text};\n"
+            . "SiteTagEntry.new_text    = {$new_text};\n"
+            . "SiteTagEntry.add_text    = {$add_text};\n";
     }
 
     protected function getJavaScriptClassName()

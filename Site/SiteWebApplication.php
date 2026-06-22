@@ -734,8 +734,8 @@ class SiteWebApplication extends SiteApplication
             $admin_base_href = $this->config->uri->admin_base;
 
             if (mb_substr($admin_base_href, 0, 1) === '/') {
-                $admin_base_href = $this->getProtocol() .
-                    $this->getServerName() . $admin_base_href;
+                $admin_base_href = $this->getProtocol()
+                    . $this->getServerName() . $admin_base_href;
             }
         }
 

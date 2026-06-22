@@ -31,8 +31,8 @@ class SiteCommandLineConfigModule extends SiteConfigModule
         $this->app->database->dsn = $this->database->dsn;
 
         if ($this->date->time_zone !== null) {
-            $this->app->default_time_zone =
-                new DateTimeZone($this->date->time_zone);
+            $this->app->default_time_zone
+                = new DateTimeZone($this->date->time_zone);
         }
 
         $this->app->default_locale = $this->i18n->locale;

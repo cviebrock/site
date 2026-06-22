@@ -266,8 +266,8 @@ class SiteVideoMedia extends SiteMedia
 
     public function getScrubberImageInterval()
     {
-        $count = ($this->scrubber_image_count > 0) ?
-            $this->scrubber_image_count : $this->getDefaultScrubberImageCount();
+        $count = ($this->scrubber_image_count > 0)
+            ? $this->scrubber_image_count : $this->getDefaultScrubberImageCount();
 
         return $this->duration / $count;
     }

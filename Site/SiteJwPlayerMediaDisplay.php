@@ -391,8 +391,8 @@ class SiteJwPlayerMediaDisplay extends SwatControl
 
         if ($this->display_on_complete_message_on_load) {
             $javascript .= sprintf(
-                "\t%s." .
-                "display_on_complete_message_on_load = true;\n",
+                "\t%s."
+                . "display_on_complete_message_on_load = true;\n",
                 $this->getJavascriptVariableName()
             );
         }
@@ -471,12 +471,12 @@ class SiteJwPlayerMediaDisplay extends SwatControl
         }
 
         return sprintf(
-            'Videos on this site require either ' .
-            '<a href="https://en.wikipedia.org/wiki/HTML5_video" ' .
-            'target="_blank">HTML5 video support</a> (%s %s) or ' .
-            '<a href="https://get.adobe.com/flashplayer/" target="_blank">' .
-            'Adobe Flash Player</a> (version 18 or higher). ' .
-            'Please upgrade your browser and try again.',
+            'Videos on this site require either '
+            . '<a href="https://en.wikipedia.org/wiki/HTML5_video" '
+            . 'target="_blank">HTML5 video support</a> (%s %s) or '
+            . '<a href="https://get.adobe.com/flashplayer/" target="_blank">'
+            . 'Adobe Flash Player</a> (version 18 or higher). '
+            . 'Please upgrade your browser and try again.',
             SwatString::toList($codecs, 'or'),
             ngettext('codec', 'codecs', count($codecs))
         );

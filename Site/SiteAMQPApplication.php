@@ -122,11 +122,10 @@ abstract class SiteAMQPApplication extends SiteApplication
                 } catch (AMQPConnectionException $e) {
                     $this->logger->debug(Site::_('connection error') . PHP_EOL);
 
-                    if ($e->getMessage() ===
-                        'Socket error: could not connect to host.') {
+                    if ($e->getMessage() === 'Socket error: could not connect to host.') {
                         $this->logger->error(
-                            'Could not connect to AMQP server on host ' .
-                            '{host}.' . PHP_EOL,
+                            'Could not connect to AMQP server on host '
+                            . '{host}.' . PHP_EOL,
                             ['host' => $this->cli->args['address']]
                         );
                     } else {
@@ -174,7 +173,7 @@ abstract class SiteAMQPApplication extends SiteApplication
     abstract protected function doWork(SiteAMQPJob $job);
 
     /**
-     * Performs any initilization of this application.
+     * Performs any initialization of this application.
      *
      * Subclasses should extend this method to add any required start-up
      * initialization.
@@ -189,8 +188,8 @@ abstract class SiteAMQPApplication extends SiteApplication
         // Get namespaced queue name if a default_namespace is set in the
         // application config. This allows global workers to have no namespace.
         if ($this->config->amqp->default_namespace != '') {
-            $queue_name = $this->config->amqp->default_namespace .
-                '.' . $this->queue;
+            $queue_name = $this->config->amqp->default_namespace
+                . '.' . $this->queue;
         } else {
             $queue_name = $this->queue;
         }
@@ -201,8 +200,8 @@ abstract class SiteAMQPApplication extends SiteApplication
         $queue->declareQueue();
 
         $this->logger->debug(
-            '=== ' . Site::_('Ready for work.') . ' ===' .
-            PHP_EOL . PHP_EOL
+            '=== ' . Site::_('Ready for work.') . ' ==='
+            . PHP_EOL . PHP_EOL
         );
 
         while (true) {

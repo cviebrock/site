@@ -48,8 +48,8 @@ class SiteAudioMediaDurationUpdater extends SiteCommandLineApplication
                 ['--dry-run'],
                 'setDryRun',
                 Site::_(
-                    'Durations are only calculated but not saved. Use ' .
-                    'with --verbose to see what durations differ.'
+                    'Durations are only calculated but not saved. Use '
+                    . 'with --verbose to see what durations differ.'
                 )
             )
         );
@@ -58,8 +58,8 @@ class SiteAudioMediaDurationUpdater extends SiteCommandLineApplication
             ['-s', '--shortname'],
             'setMediaSetShortname',
             Site::_(
-                'Sets the shortname of the media set whose durations we want ' .
-                'to recalculate.'
+                'Sets the shortname of the media set whose durations we want '
+                . 'to recalculate.'
             )
         );
 

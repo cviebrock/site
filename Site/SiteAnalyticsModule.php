@@ -102,8 +102,8 @@ class SiteAnalyticsModule extends SiteApplicationModule
     {
         $config = $this->app->getModule('SiteConfigModule');
 
-        $this->display_advertising =
-            $config->analytics->google_display_advertising;
+        $this->display_advertising
+            = $config->analytics->google_display_advertising;
 
         $this->google4_account = $config->analytics->google4_account;
 
@@ -179,8 +179,8 @@ class SiteAnalyticsModule extends SiteApplicationModule
             $this->analytics_opt_out = false;
             if (!$cookie_module instanceof SiteCookieModule) {
                 $e = new SiteException(
-                    'Attempting to remove Analytics Opt ' .
-                        'Out Cookie with no SiteCookieModule available.'
+                    'Attempting to remove Analytics Opt '
+                        . 'Out Cookie with no SiteCookieModule available.'
                 );
 
                 $e->processAndContinue();
@@ -195,8 +195,8 @@ class SiteAnalyticsModule extends SiteApplicationModule
             $this->analytics_opt_out = true;
             if (!$cookie_module instanceof SiteCookieModule) {
                 $e = new SiteException(
-                    'Attempting to set Analytics Opt Out ' .
-                        'Cookie with no SiteCookieModule available.'
+                    'Attempting to set Analytics Opt Out '
+                        . 'Cookie with no SiteCookieModule available.'
                 );
 
                 $e->processAndContinue();
@@ -375,9 +375,9 @@ class SiteAnalyticsModule extends SiteApplicationModule
         // SEE https://developers.google.com/tag-platform/tag-manager/datalayer#persist_data_layer_variables
         // Call and any commands via dataLayer (which must happen before GTM snippet is initiated),
         // then init GTM snippet (script head insert)
-        return ($this->getGoogleTagManagerCommandsInlineJavascript() ?? '') .
-            "\n" .
-            ($this->getGoogleTagManagerTrackerInlineJavascript() ?? '');
+        return ($this->getGoogleTagManagerCommandsInlineJavascript() ?? '')
+            . "\n"
+            . ($this->getGoogleTagManagerTrackerInlineJavascript() ?? '');
     }
 
     public function getGoogleTagManagerCommandsInlineJavascript(): ?string

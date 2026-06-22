@@ -23,8 +23,8 @@ class SiteVideoTextTracksPage extends SitePage
             throw new SiteNotFoundException('Media not specified');
         }
         if ($this->media->scrubber_image === null) {
-            throw new SiteNotFoundException('Media doesn’t have a ' .
-                'scrubber image');
+            throw new SiteNotFoundException('Media doesn’t have a '
+                . 'scrubber image');
         }
 
         // for private videos, check if the user has access
@@ -51,8 +51,8 @@ class SiteVideoTextTracksPage extends SitePage
         )->getFirst();
 
         if ($this->media === null) {
-            throw new SiteNotFoundException('Media not found for id:' .
-                $media_id);
+            throw new SiteNotFoundException('Media not found for id:'
+                . $media_id);
         }
     }
 

@@ -93,8 +93,8 @@ class SiteLayout extends SiteObject
     public function clear($name)
     {
         if (!isset($this->data->{$name})) {
-            throw new SiteException("Layout data property '{$name}' does not " .
-                'exist and cannot be cleared.');
+            throw new SiteException("Layout data property '{$name}' does not "
+                . 'exist and cannot be cleared.');
         }
 
         $this->data->{$name} = '';
@@ -107,12 +107,12 @@ class SiteLayout extends SiteObject
         $this->data->basehref = $this->app->getBaseHref();
         $this->data->title = '';
         $this->data->html_title = '';
-        $this->data->site_title =
-                SwatString::minimizeEntities($this->app->config->site->title);
+        $this->data->site_title
+                = SwatString::minimizeEntities($this->app->config->site->title);
 
         if (isset($this->app->config->site->meta_description)) {
-            $this->data->meta_description =
-                SwatString::minimizeEntities(
+            $this->data->meta_description
+                = SwatString::minimizeEntities(
                     $this->app->config->site->meta_description
                 );
         } else {
@@ -266,8 +266,8 @@ class SiteLayout extends SiteObject
     protected function getCombineEnabledByFlagFile()
     {
         $www_root = dirname($_SERVER['SCRIPT_FILENAME']);
-        $filename = $www_root . DIRECTORY_SEPARATOR .
-            Concentrate_FlagFile::COMBINED;
+        $filename = $www_root . DIRECTORY_SEPARATOR
+            . Concentrate_FlagFile::COMBINED;
 
         return file_exists($filename);
     }
@@ -281,8 +281,8 @@ class SiteLayout extends SiteObject
     protected function getCompileEnabledByFlagFile()
     {
         $www_root = dirname($_SERVER['SCRIPT_FILENAME']);
-        $filename = $www_root . DIRECTORY_SEPARATOR .
-            Concentrate_FlagFile::COMPILED;
+        $filename = $www_root . DIRECTORY_SEPARATOR
+            . Concentrate_FlagFile::COMPILED;
 
         return file_exists($filename);
     }
@@ -296,8 +296,8 @@ class SiteLayout extends SiteObject
     protected function getMinifyEnabledByFlagFile()
     {
         $www_root = dirname($_SERVER['SCRIPT_FILENAME']);
-        $filename = $www_root . DIRECTORY_SEPARATOR .
-            Concentrate_FlagFile::MINIFIED;
+        $filename = $www_root . DIRECTORY_SEPARATOR
+            . Concentrate_FlagFile::MINIFIED;
 
         return file_exists($filename);
     }
