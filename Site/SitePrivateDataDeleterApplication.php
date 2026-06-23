@@ -43,8 +43,8 @@ class SitePrivateDataDeleterApplication extends SiteCommandLineApplication
         $instance = new SiteCommandLineArgument(
             ['-i', '--instance'],
             'setInstance',
-            'Optional. Sets the site instance for which to ' .
-            'run this application.'
+            'Optional. Sets the site instance for which to '
+            . 'run this application.'
         );
 
         $instance->addParameter(
@@ -57,15 +57,15 @@ class SitePrivateDataDeleterApplication extends SiteCommandLineApplication
         $debug = new SiteCommandLineArgument(
             ['-D', '--debug'],
             'setDebug',
-            Site::_('Turns on debugging mode which causes ' .
-            'output for each action to be sent to stdout.')
+            Site::_('Turns on debugging mode which causes '
+            . 'output for each action to be sent to stdout.')
         );
 
         $dry_run = new SiteCommandLineArgument(
             ['--dry-run'],
             'setDryRun',
-            Site::_('No private data is actually deleted. Use ' .
-            'with --debug to see what data will be deleted.')
+            Site::_('No private data is actually deleted. Use '
+            . 'with --debug to see what data will be deleted.')
         );
 
         $this->addCommandLineArgument($debug);
@@ -81,9 +81,9 @@ class SitePrivateDataDeleterApplication extends SiteCommandLineApplication
 
     public function setDebug($debug)
     {
-        $verbosity = ($debug) ?
-            SiteCommandLineApplication::VERBOSITY_ALL :
-            SiteCommandLineApplication::VERBOSITY_NONE;
+        $verbosity = ($debug)
+            ? SiteCommandLineApplication::VERBOSITY_ALL
+            : SiteCommandLineApplication::VERBOSITY_NONE;
 
         $this->setVerbosity($verbosity);
     }

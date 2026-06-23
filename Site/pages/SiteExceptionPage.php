@@ -44,8 +44,8 @@ class SiteExceptionPage extends SitePage
 
     protected function getHttpStatusHeader()
     {
-        return ($this->exception instanceof SiteException) ?
-            $this->exception->http_status_code : 500;
+        return ($this->exception instanceof SiteException)
+            ? $this->exception->http_status_code : 500;
     }
 
     // build phase

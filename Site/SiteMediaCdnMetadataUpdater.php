@@ -24,8 +24,8 @@ abstract class SiteMediaCdnMetadataUpdater extends SiteCommandLineApplication
         $instance = new SiteCommandLineArgument(
             ['-i', '--instance'],
             'setInstance',
-            'Optional. Sets the site instance for which to ' .
-            'run this application.'
+            'Optional. Sets the site instance for which to '
+            . 'run this application.'
         );
 
         $instance->addParameter(

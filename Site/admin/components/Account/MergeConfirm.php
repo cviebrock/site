@@ -179,8 +179,8 @@ abstract class SiteAccountMergeConfirm extends AdminDBConfirmation
         echo '<p>';
         printf(
             Site::_(
-                'This will transfer all items from %s to %s and deactivate ' .
-                'the unused account.'
+                'This will transfer all items from %s to %s and deactivate '
+                . 'the unused account.'
             ),
             SwatString::minimizeEntities($this->getSourceAccount()->email),
             SwatString::minimizeEntities($this->getTargetAccount()->email)
@@ -191,8 +191,8 @@ abstract class SiteAccountMergeConfirm extends AdminDBConfirmation
         $message->content = ob_get_clean();
         $message->content_type = 'text/xml';
 
-        $this->ui->getWidget('yes_button')->title =
-            Site::_('Merge Accounts');
+        $this->ui->getWidget('yes_button')->title
+            = Site::_('Merge Accounts');
     }
 
     protected function buildForm()

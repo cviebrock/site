@@ -102,8 +102,8 @@ class SiteAccountSessionModule extends SiteSessionModule
 
         $account = $this->getNewAccountObject();
 
-        $instance = ($this->app->hasModule('SiteMultipleInstanceModule')) ?
-            $this->app->instance->getInstance() : null;
+        $instance = ($this->app->hasModule('SiteMultipleInstanceModule'))
+            ? $this->app->instance->getInstance() : null;
 
         if ($account->loadWithEmail($email, $instance)) {
             $password_hash = $account->password;
@@ -259,8 +259,8 @@ class SiteAccountSessionModule extends SiteSessionModule
     ) {
         $logged_in = false;
 
-        $instance = ($this->app->hasModule('SiteMultipleInstanceModule')) ?
-            $this->app->instance->getInstance() : null;
+        $instance = ($this->app->hasModule('SiteMultipleInstanceModule'))
+            ? $this->app->instance->getInstance() : null;
 
         $account = $this->getNewAccountObject();
         if ($account->loadByLoginTag($tag, $instance)) {

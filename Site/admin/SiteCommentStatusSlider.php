@@ -100,8 +100,7 @@ class SiteCommentStatusSlider extends SwatOptionControl
 
         $img_tag = new SwatHtmlTag('img');
         $img_tag->class = 'site-comment-status-slider-image';
-        $img_tag->src =
-            'packages/site/admin/images/site-comment-status-slider-thumb.gif';
+        $img_tag->src = 'packages/site/admin/images/site-comment-status-slider-thumb.gif';
 
         $img_tag->alt = '';
         $img_tag->display();

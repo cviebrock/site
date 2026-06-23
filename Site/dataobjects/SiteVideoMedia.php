@@ -124,7 +124,7 @@ class SiteVideoMedia extends SiteMedia
         foreach ($this->encoding_bindings as $binding) {
             // Return first encoding that has an audio mime type. This can be
             // improved in the future.
-            if (mb_strpos($binding->media_type->mime_type, 'audio') !== false) {
+            if (str_contains($binding->media_type->mime_type, 'audio')) {
                 $audio = $binding;
                 break;
             }
@@ -266,8 +266,8 @@ class SiteVideoMedia extends SiteMedia
 
     public function getScrubberImageInterval()
     {
-        $count = ($this->scrubber_image_count > 0) ?
-            $this->scrubber_image_count : $this->getDefaultScrubberImageCount();
+        $count = ($this->scrubber_image_count > 0)
+            ? $this->scrubber_image_count : $this->getDefaultScrubberImageCount();
 
         return $this->duration / $count;
     }

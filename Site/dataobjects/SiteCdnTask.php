@@ -114,9 +114,9 @@ abstract class SiteCdnTask extends SwatDBDataObject
      */
     public function getResultDescription()
     {
-        return (($this->error_date instanceof SwatDate) ?
-            Site::_('error.') :
-            Site::_('done.')) . "\n";
+        return (($this->error_date instanceof SwatDate)
+            ? Site::_('error.')
+            : Site::_('done.')) . "\n";
     }
 
     protected function init()

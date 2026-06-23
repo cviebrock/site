@@ -56,8 +56,8 @@ class SiteAccountMerge extends AdminSearch
 
         if ($view->hasColumn('instance')
             && $this->ui->hasWidget('search_instance')) {
-            $view->getColumn('instance')->visible =
-                ($this->ui->getWidget('search_instance')->value === null)
+            $view->getColumn('instance')->visible
+                = ($this->ui->getWidget('search_instance')->value === null)
                 && $this->ui->getWidget('search_instance')->parent->visible;
         }
 
@@ -176,8 +176,8 @@ class SiteAccountMerge extends AdminSearch
         );
 
         if (count($accounts) > 0) {
-            $this->ui->getWidget('results_message')->content =
-                $pager->getResultsMessage('result', 'results');
+            $this->ui->getWidget('results_message')->content
+                = $pager->getResultsMessage('result', 'results');
         }
 
         $class_name = SwatDBClassMap::get(SiteAccount::class);

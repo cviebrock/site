@@ -42,8 +42,8 @@ class SiteAccountSuspicious extends AdminIndex
         $view = $this->ui->getWidget('index_view');
 
         if ($view->hasColumn('instance')) {
-            $view->getColumn('instance')->visible =
-                $this->app->isMultipleInstanceAdmin();
+            $view->getColumn('instance')->visible
+                = $this->app->isMultipleInstanceAdmin();
         }
     }
 

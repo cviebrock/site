@@ -333,8 +333,8 @@ class SiteMedia extends SwatDBDataObject
         );
 
         foreach ($this->encoding_bindings as $binding) {
-            $id = ($binding->media_encoding instanceof SiteMediaEncoding) ?
-                $binding->media_encoding->id : $binding->media_encoding;
+            $id = ($binding->media_encoding instanceof SiteMediaEncoding)
+                ? $binding->media_encoding->id : $binding->media_encoding;
 
             if ($encoding->id === $id) {
                 return $binding;
@@ -397,9 +397,9 @@ class SiteMedia extends SwatDBDataObject
         if ($loaded
             && $this->media_set_shortname !== null
             && $this->media_set->shortname !== $this->media_set_shortname) {
-            throw new SiteException('Trying to load media with the wrong ' .
-                'media set. This may happen if the wrong wrapper class is ' .
-                'used.');
+            throw new SiteException('Trying to load media with the wrong '
+                . 'media set. This may happen if the wrong wrapper class is '
+                . 'used.');
         }
 
         return $loaded;
@@ -620,8 +620,8 @@ class SiteMedia extends SwatDBDataObject
         }
 
         if ($this->media_set_shortname == '') {
-            throw new SiteException('To process media, a media set ' .
-                'shortname must be defined in the media dataobject.');
+            throw new SiteException('To process media, a media set '
+                . 'shortname must be defined in the media dataobject.');
         }
 
         $class_name = SwatDBClassMap::get(SiteMediaSet::class);

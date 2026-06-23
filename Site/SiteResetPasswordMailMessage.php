@@ -75,9 +75,9 @@ class SiteResetPasswordMailMessage extends SiteMultipartMailMessage
     public function send()
     {
         if ($this->account->email == '') {
-            throw new SiteException('Account requires an email address to ' .
-                'reset password. Make sure email is loaded on the account ' .
-                'object.');
+            throw new SiteException('Account requires an email address to '
+                . 'reset password. Make sure email is loaded on the account '
+                . 'object.');
         }
 
         $this->to_address = $this->account->email;
@@ -119,30 +119,30 @@ class SiteResetPasswordMailMessage extends SiteMultipartMailMessage
         return sprintf(
             $format_string,
             sprintf(
-                Site::_('This email is in response to your recent ' .
-            'request for a new password for your %s account. Your password ' .
-            'has not yet been changed. Please click on the following link ' .
-            'and follow the steps to change your account password.'),
+                Site::_('This email is in response to your recent '
+            . 'request for a new password for your %s account. Your password '
+            . 'has not yet been changed. Please click on the following link '
+            . 'and follow the steps to change your account password.'),
                 $this->application_title
             ),
             $formatted_link,
-            Site::_('Clicking on this link will take you to a page that ' .
-            'requires you to enter in and confirm a new password. Once you ' .
-            'have chosen and confirmed your new password you will be taken to ' .
-            'your account page.'),
+            Site::_('Clicking on this link will take you to a page that '
+            . 'requires you to enter in and confirm a new password. Once you '
+            . 'have chosen and confirmed your new password you will be taken to '
+            . 'your account page.'),
             Site::_('Why did I get this email?'),
-            Site::_('When someone forgets their password the best way ' .
-            'for us to verify their identity is to send an email to the ' .
-            'address listed in their account. By clicking on the link above ' .
-            'you are verifying that you requested a new password for your ' .
-            'account.'),
+            Site::_('When someone forgets their password the best way '
+            . 'for us to verify their identity is to send an email to the '
+            . 'address listed in their account. By clicking on the link above '
+            . 'you are verifying that you requested a new password for your '
+            . 'account.'),
             Site::_('I did not request a new password:'),
             sprintf(
-                Site::_('If you did not request a new password from %s ' .
-            'then someone may have accidentally entered your email when ' .
-            'requesting a new password. Have no fear! Your account ' .
-            'information is safe. Simply ignore this email and continue ' .
-            'using your existing password.'),
+                Site::_('If you did not request a new password from %s '
+            . 'then someone may have accidentally entered your email when '
+            . 'requesting a new password. Have no fear! Your account '
+            . 'information is safe. Simply ignore this email and continue '
+            . 'using your existing password.'),
                 $this->application_title
             )
         );

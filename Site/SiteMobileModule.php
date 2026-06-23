@@ -67,8 +67,8 @@ class SiteMobileModule extends SiteApplicationModule
     {
         $meta_tag = new SwatHtmlTag('meta');
         $meta_tag->name = 'viewport';
-        $meta_tag->content = 'width=device-width, initial-scale=1.0, ' .
-            'maximum-scale=1.0, user-scalable=no';
+        $meta_tag->content = 'width=device-width, initial-scale=1.0, '
+            . 'maximum-scale=1.0, user-scalable=no';
 
         $meta_tag->display();
     }
@@ -493,15 +493,15 @@ class SiteMobileModule extends SiteApplicationModule
         $meta->name = 'viewport';
 
         if ($this->isHandheld()) {
-            $meta->content =
-                'width=device-width, ' .
-                'initial-scale=1.0, ' .
-                'maximum-scale=1.0, ' .
-                'minimum-scale=1.0';
+            $meta->content
+                = 'width=device-width, '
+                . 'initial-scale=1.0, '
+                . 'maximum-scale=1.0, '
+                . 'minimum-scale=1.0';
         } else {
-            $meta->content =
-                'width=' . intval($width) . ', ' .
-                'maximum-scale=1.0';
+            $meta->content
+                = 'width=' . intval($width) . ', '
+                . 'maximum-scale=1.0';
         }
 
         return $meta;

@@ -34,8 +34,8 @@ class SiteConfigChecker extends SiteCommandLineApplication
         $quiet = new SiteCommandLineArgument(
             ['-q', '--quiet'],
             'setQuiet',
-            'Turns on quiet mode. The return value of the process ' .
-            'indicates success or failure but no output is displayed.'
+            'Turns on quiet mode. The return value of the process '
+            . 'indicates success or failure but no output is displayed.'
         );
 
         $this->addCommandLineArgument($quiet);
@@ -76,10 +76,10 @@ class SiteConfigChecker extends SiteCommandLineApplication
     public function addDefinitions(array $definitions)
     {
         foreach ($definitions as $qualified_name => $default_value) {
-            if (mb_strpos($qualified_name, '.') === false) {
+            if (!str_contains($qualified_name, '.')) {
                 throw new SiteException(sprintf(
-                    "Qualified name of configuration definition '%s' must be " .
-                    'of the form section.name.',
+                    "Qualified name of configuration definition '%s' must be "
+                    . 'of the form section.name.',
                     $qualified_name
                 ));
             }
@@ -140,9 +140,9 @@ class SiteConfigChecker extends SiteCommandLineApplication
      */
     public function setQuiet($quiet = true)
     {
-        $verbosity = ($quiet) ?
-            SiteCommandLineApplication::VERBOSITY_NONE :
-            SiteCommandLineApplication::VERBOSITY_ALL;
+        $verbosity = ($quiet)
+            ? SiteCommandLineApplication::VERBOSITY_NONE
+            : SiteCommandLineApplication::VERBOSITY_ALL;
 
         $this->setVerbosity($verbosity);
     }

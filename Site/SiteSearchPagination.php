@@ -153,8 +153,8 @@ class SiteSearchPagination extends SwatPagination
                 $display = true;
             } elseif ($this->max_accurate_records !== null
                 && $total_pages > $this->total_pages
-                && $this->current_page - $i <=
-                    min(9, 3 + $total_pages - $this->total_pages)) {
+                && $this->current_page - $i
+                    <= min(9, 3 + $total_pages - $this->total_pages)) {
                 // When total records are unknown, grow the last number of
                 // pages until 9 are displayed (plus the next page, makes 10).
                 $display = true;
@@ -172,8 +172,8 @@ class SiteSearchPagination extends SwatPagination
                     $current->display();
                 } else {
                     $anchor->href = sprintf($link, (string) $i);
-                    $anchor->title =
-                        sprintf(Swat::_('Go to page %d'), $i);
+                    $anchor->title
+                        = sprintf(Swat::_('Go to page %d'), $i);
 
                     $anchor->setContent((string) $i);
                     $anchor->display();

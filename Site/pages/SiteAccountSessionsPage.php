@@ -101,8 +101,8 @@ class SiteAccountSessionsPage extends SiteDBEditPage
     protected function endSession(SiteAccountLoginSession $session)
     {
         // extra sanity check so you are only ending your own sessions
-        if ($session->getInternalValue('account') !==
-            $this->app->session->account->id) {
+        if ($session->getInternalValue('account')
+            !== $this->app->session->account->id) {
             return;
         }
 
@@ -283,9 +283,9 @@ class SiteAccountSessionsPage extends SiteDBEditPage
 
         $div->setContent(
             Site::_(
-                'If you sign in from multiple devices (for example, your ' .
-                'phone and your desktop) you can view and manage your ' .
-                'sessions on this page.'
+                'If you sign in from multiple devices (for example, your '
+                . 'phone and your desktop) you can view and manage your '
+                . 'sessions on this page.'
             )
         );
 
@@ -299,10 +299,10 @@ class SiteAccountSessionsPage extends SiteDBEditPage
 
         $div->setContent(
             Site::_(
-                'If you notice any unfamiliar ' .
-                'devices or you forgot to sign out from any device you can ' .
-                'end those sessions below, removing access to your account ' .
-                'from those devices until the next time you use them.'
+                'If you notice any unfamiliar '
+                . 'devices or you forgot to sign out from any device you can '
+                . 'end those sessions below, removing access to your account '
+                . 'from those devices until the next time you use them.'
             )
         );
 

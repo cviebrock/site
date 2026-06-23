@@ -42,11 +42,11 @@ abstract class SiteAttachmentUpload extends AdminObjectEdit
     protected function initUploadWidget()
     {
         $upload_widget = $this->ui->getWidget('upload_widget');
-        $upload_widget->accept_mime_types =
-            $this->getObject()->getValidMimeTypes();
+        $upload_widget->accept_mime_types
+            = $this->getObject()->getValidMimeTypes();
 
-        $upload_widget->human_file_types =
-            $this->getObject()->getValidHumanFileTypes();
+        $upload_widget->human_file_types
+            = $this->getObject()->getValidHumanFileTypes();
     }
 
     // process phase
@@ -98,14 +98,14 @@ abstract class SiteAttachmentUpload extends AdminObjectEdit
     {
         parent::buildFrame();
 
-        $this->ui->getWidget('edit_frame')->title =
-            Site::_('Upload Attachment');
+        $this->ui->getWidget('edit_frame')->title
+            = Site::_('Upload Attachment');
     }
 
     protected function buildButton()
     {
-        $this->ui->getWidget('submit_button')->title =
-            Site::_('Upload Attachment');
+        $this->ui->getWidget('submit_button')->title
+            = Site::_('Upload Attachment');
     }
 
     protected function buildNavBar()

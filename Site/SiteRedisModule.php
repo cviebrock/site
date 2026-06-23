@@ -113,13 +113,13 @@ class SiteRedisModule extends SiteApplicationModule
             } catch (RedisException $e) {
                 // Handle Redis 3.2.0 protected mode connection error. See
                 // https://github.com/phpredis/phpredis/issues/831
-                $protected_mode_error =
-                    'protocol error, got \'n\' as reply type byte';
+                $protected_mode_error
+                    = 'protocol error, got \'n\' as reply type byte';
 
                 if ($e->getMessage() === $protected_mode_error) {
                     throw new RedisException(
-                        'Protected mode prevented connection to Redis. ' .
-                        'Check your Redis configuration and try again.'
+                        'Protected mode prevented connection to Redis. '
+                        . 'Check your Redis configuration and try again.'
                     );
                 }
             }

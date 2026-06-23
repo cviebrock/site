@@ -76,9 +76,9 @@ class SiteNewPasswordMailMessage extends SiteMultipartMailMessage
     public function send()
     {
         if ($this->account->email == '') {
-            throw new SiteException('Account requires an email address to ' .
-                'generate new password. Make sure email is loaded on the ' .
-                'account object.');
+            throw new SiteException('Account requires an email address to '
+                . 'generate new password. Make sure email is loaded on the '
+                . 'account object.');
         }
 
         $this->to_address = $this->account->email;
@@ -119,13 +119,13 @@ class SiteNewPasswordMailMessage extends SiteMultipartMailMessage
     {
         return sprintf(
             $format_string,
-            sprintf(Site::_('This email is in response to your recent ' .
-            'request for a new password for your %s account. Your new ' .
-            'password is:'), $this->application_title),
+            sprintf(Site::_('This email is in response to your recent '
+            . 'request for a new password for your %s account. Your new '
+            . 'password is:'), $this->application_title),
             $formatted_password,
-            Site::_('After logging into your account, you can set a new ' .
-            'password by clicking the "Change Password" link on your ' .
-            'account page.')
+            Site::_('After logging into your account, you can set a new '
+            . 'password by clicking the "Change Password" link on your '
+            . 'account page.')
         );
     }
 

@@ -71,8 +71,8 @@ class SiteArticleOrder extends AdminDBOrder
             $this->getWhereClause()
         ));
 
-        $sql = 'select sum(displayorder) from Article where ' .
-            $this->getWhereClause();
+        $sql = 'select sum(displayorder) from Article where '
+            . $this->getWhereClause();
 
         $sum = SwatDB::queryOne($this->app->db, $sql, 'integer');
         $options_list = $this->ui->getWidget('options');

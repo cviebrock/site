@@ -93,9 +93,9 @@ class SiteAdDetails extends AdminIndex
 
         $base_href = $this->app->getFrontendBaseHref();
         printf(
-            '<li>%1$s<strong>?%2$s=%3$s</strong></li>' .
-            '<li>%1$s?othervar=otherval<strong>&%2$s=%3$s</strong></li>' .
-            '<li>%1$sus/en/category/product<strong>?%2$s=%3$s</strong></li>',
+            '<li>%1$s<strong>?%2$s=%3$s</strong></li>'
+            . '<li>%1$s?othervar=otherval<strong>&%2$s=%3$s</strong></li>'
+            . '<li>%1$sus/en/category/product<strong>?%2$s=%3$s</strong></li>',
             SwatString::minimizeEntities($base_href),
             SwatString::minimizeEntities($inbound_tracking_id),
             SwatString::minimizeEntities($this->ad->shortname)

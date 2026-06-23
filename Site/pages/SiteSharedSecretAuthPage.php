@@ -26,9 +26,9 @@ class SiteSharedSecretAuthPage extends SitePageDecorator
 
             throw new SiteInvalidMacException(
                 sprintf(
-                    "Invalid message authentication code.\n\n" .
-                    "Code expected: %s.\n" .
-                    'Code provided: %s.',
+                    "Invalid message authentication code.\n\n"
+                    . "Code expected: %s.\n"
+                    . 'Code provided: %s.',
                     $expected,
                     $provided
                 )

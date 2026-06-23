@@ -260,8 +260,8 @@ abstract class SiteApplication extends SiteObject
         if ($instance instanceof SiteInstance
             && $this->getInstanceId() != $instance->id) {
             if (!isset($config_cache[$instance->id])) {
-                $config_cache[$instance->id] =
-                    SwatDB::getOptionArray(
+                $config_cache[$instance->id]
+                    = SwatDB::getOptionArray(
                         $this->db,
                         'InstanceConfigSetting',
                         'value',
@@ -413,8 +413,8 @@ abstract class SiteApplication extends SiteObject
         // check identifier against other modules
         if (isset($this->modules[$id])) {
             throw new SiteException(sprintf(
-                "A module with the identifier '%s' already exists in this " .
-                'applicaiton.',
+                "A module with the identifier '%s' already exists in this "
+                . 'applicaiton.',
                 $id
             ));
         }
@@ -423,9 +423,9 @@ abstract class SiteApplication extends SiteObject
         $properties = get_object_vars($this);
         if (array_key_exists($id, $properties)) {
             throw new SiteException(sprintf(
-                "Invalid module identifier '%s'. Module identifiers must " .
-                'not be the same as any of the property names of this ' .
-                'application object.',
+                "Invalid module identifier '%s'. Module identifiers must "
+                . 'not be the same as any of the property names of this '
+                . 'application object.',
                 $id
             ));
         }
@@ -434,8 +434,8 @@ abstract class SiteApplication extends SiteObject
         foreach ($module->depends() as $depend) {
             if (!$depend instanceof SiteApplicationModuleDependency) {
                 throw new SiteException(sprintf(
-                    'Module %s contains a dependency that is not a ' .
-                    'SiteApplicationModuleDependency',
+                    'Module %s contains a dependency that is not a '
+                    . 'SiteApplicationModuleDependency',
                     $module::class
                 ));
             }
@@ -443,8 +443,8 @@ abstract class SiteApplication extends SiteObject
             if ($depend->isRequired()
                 && !isset($this->modules_by_provides[$depend->getFeature()])) {
                 throw new SiteException(sprintf(
-                    "Module %s depends on feature '%s' which is not provided " .
-                    'by any module in this application.',
+                    "Module %s depends on feature '%s' which is not provided "
+                    . 'by any module in this application.',
                     $module::class,
                     $depend->getFeature()
                 ));
@@ -535,9 +535,9 @@ abstract class SiteApplication extends SiteObject
             return $this->modules[$name];
         }
 
-        throw new SiteException('Application does not have a property with ' .
-            "the name '{$name}', and no application module with the " .
-            "identifier '{$name}' is loaded.");
+        throw new SiteException('Application does not have a property with '
+            . "the name '{$name}', and no application module with the "
+            . "identifier '{$name}' is loaded.");
     }
 
     public function __isset($name)
@@ -680,8 +680,8 @@ abstract class SiteApplication extends SiteObject
         foreach ($module->depends() as $depend) {
             if (!$depend instanceof SiteApplicationModuleDependency) {
                 throw new SiteException(sprintf(
-                    'Module %s contains a dependency that is not a ' .
-                    'SiteApplicationModuleDependency',
+                    'Module %s contains a dependency that is not a '
+                    . 'SiteApplicationModuleDependency',
                     $module::class
                 ));
             }
@@ -705,8 +705,8 @@ abstract class SiteApplication extends SiteObject
             } elseif ($depend->isRequired()) {
                 // throw exception if required dependency is missing
                 throw new SiteException(sprintf(
-                    "Module %s depends on '%s' but no module provides this " .
-                    'feature.',
+                    "Module %s depends on '%s' but no module provides this "
+                    . 'feature.',
                     $module::class,
                     $depend->getFeature()
                 ));
@@ -893,8 +893,8 @@ abstract class SiteApplication extends SiteObject
             $wrapper = new $wrapper_class();
 
             if (count($indexes) > 0) {
-                $dataobject_array =
-                    $this->getCacheValue($indexes, $name_space);
+                $dataobject_array
+                    = $this->getCacheValue($indexes, $name_space);
 
                 if (count($dataobject_array) !== count($indexes)) {
                     // one or more objects are missing from the cache

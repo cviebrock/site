@@ -5,21 +5,19 @@ vendor/
 node_modules/
 
 # misc
+build/
 .DS_Store
 .env
 .idea/
 .php-cs-fixer.cache
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
+.phpunit.result.cache
 *.swp
 
 # dependency lock file
 composer.lock
-yarn.lock
 
 # overrides for local tooling
-/phpstan.neon
+phpstan.neon
+phpstan-baseline.neon
+phpunit.xml
 
-# tests
-.phpunit.cache/

@@ -86,8 +86,8 @@ class SiteHLSIndexGenerator extends SiteCommandLineApplication
             $encodings = $this->getEncodingIndexes($media);
             if (count($encodings) === 0) {
                 $this->debug(' no HLS encodings');
-            } elseif (count($encodings) ===
-                count($media->video_encoding_bindings)) {
+            } elseif (count($encodings)
+                === count($media->video_encoding_bindings)) {
                 $this->writeIndex($media, $encodings);
                 $media->has_hls = true;
                 $media->save();

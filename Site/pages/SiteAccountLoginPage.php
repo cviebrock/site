@@ -111,13 +111,13 @@ class SiteAccountLoginPage extends SiteUiPage
         $message->secondary_content = sprintf(
             '<ul><li>%s</li><li>%s</li></ul>',
             Site::_(
-                'Please check the spelling on your email ' .
-                'address or password.'
+                'Please check the spelling on your email '
+                . 'address or password.'
             ),
             sprintf(
                 Site::_(
-                    'Password is case-sensitive. Make sure ' .
-                    'your %sCaps Lock%s key is off.'
+                    'Password is case-sensitive. Make sure '
+                    . 'your %sCaps Lock%s key is off.'
                 ),
                 '<kbd>',
                 '</kbd>'
@@ -149,8 +149,8 @@ class SiteAccountLoginPage extends SiteUiPage
 
     protected function buildForgotPasswordLink()
     {
-        $this->ui->getWidget('forgot_password')->content =
-            $this->getForgotPasswordLink();
+        $this->ui->getWidget('forgot_password')->content
+            = $this->getForgotPasswordLink();
     }
 
     protected function getForgotPasswordLink()

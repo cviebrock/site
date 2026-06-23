@@ -8,9 +8,25 @@ pipeline {
             }
         }
 
+        stage('Install NPM Dependencies') {
+            environment {
+                PNPM_CACHE_FOLDER = "${env.WORKSPACE}/pnpm-cache/${env.BUILD_NUMBER}"
+            }
+            steps {
+                sh 'n -d exec engine corepack enable pnpm'
+                sh 'n -d exec engine pnpm install'
+            }
+        }
+
         stage('Check PHP Coding Style') {
             steps {
                 sh 'composer run phpcs:ci'
+            }
+        }
+
+        stage('Check Formating') {
+            steps {
+                sh 'n -d exec engine pnpm format'
             }
         }
 
@@ -20,10 +36,11 @@ pipeline {
             }
         }
 
-        stage('Run unit tests') {
+        stage('Run Test Suite') {
             steps {
                 sh 'composer run test'
             }
         }
+
     }
 }

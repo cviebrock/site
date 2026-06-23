@@ -64,17 +64,17 @@ class SiteMessagesModule extends SiteApplicationModule implements Countable
     {
         if (!class_exists($class_name)) {
             throw new SiteClassNotFoundException(sprintf(
-                'Class ‘%s’ is not ' .
-                'defined and cannot be registered in this message module.',
+                'Class ‘%s’ is not '
+                . 'defined and cannot be registered in this message module.',
                 $class_name
             ), 0, $class_name);
         }
 
         if ($class_name !== 'SwatMessage'
             && !is_subclass_of($class_name, 'SwatMessage')) {
-            throw new SiteInvalidClassException(sprintf('Class ‘%s’ is not ' .
-                'a SwatMessage and cannot be registered in this message ' .
-                'module.', $class_name), 0, null);
+            throw new SiteInvalidClassException(sprintf('Class ‘%s’ is not '
+                . 'a SwatMessage and cannot be registered in this message '
+                . 'module.', $class_name), 0, null);
         }
     }
 
@@ -129,9 +129,9 @@ class SiteMessagesModule extends SiteApplicationModule implements Countable
     public function count(): int
     {
         return ($this->app->session->isActive()
-            && $this->session_is_initialized) ?
-            count($this->app->session->messages) :
-            0;
+            && $this->session_is_initialized)
+            ? count($this->app->session->messages)
+            : 0;
     }
 
     /**
@@ -139,8 +139,8 @@ class SiteMessagesModule extends SiteApplicationModule implements Countable
      */
     protected function initSession()
     {
-        $messages_exists_in_session =
-            isset($this->app->session->messages)
+        $messages_exists_in_session
+            = isset($this->app->session->messages)
             && $this->app->session->messages instanceof ArrayObject;
 
         if (!$this->session_is_initialized && !$messages_exists_in_session) {

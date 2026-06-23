@@ -152,8 +152,8 @@ class SiteConfigSection extends SwatObject implements Iterator
         if (!array_key_exists($name, $this->values)) {
             throw new SiteException(
                 sprintf(
-                    "Can not set configuration setting. Setting '%s' " .
-                    "does not exist in the section '%s'.",
+                    "Can not set configuration setting. Setting '%s' "
+                    . "does not exist in the section '%s'.",
                     $name,
                     $this->name
                 )
@@ -184,8 +184,8 @@ class SiteConfigSection extends SwatObject implements Iterator
         if (!array_key_exists($name, $this->values)) {
             throw new SiteException(
                 sprintf(
-                    "Can not get configuration setting. Setting '%s' " .
-                    "does not exist in the section '%s'.",
+                    "Can not get configuration setting. Setting '%s' "
+                    . "does not exist in the section '%s'.",
                     $name,
                     $this->name
                 )

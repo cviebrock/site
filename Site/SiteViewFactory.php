@@ -157,8 +157,8 @@ class SiteViewFactory extends SwatObject
     {
         if (!class_exists($view_class_name)) {
             throw new SwatClassNotFoundException(sprintf(
-                'View class "%s" does not exist and could not be found in ' .
-                'the search path.',
+                'View class "%s" does not exist and could not be found in '
+                . 'the search path.',
                 $view_class_name
             ), 0, $view_class_name);
         }

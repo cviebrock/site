@@ -280,10 +280,10 @@ class SiteConfigModule extends SiteApplicationModule
     public function addDefinitions(array $definitions): void
     {
         foreach ($definitions as $qualified_name => $default_value) {
-            if (mb_strpos($qualified_name, '.') === false) {
+            if (!str_contains($qualified_name, '.')) {
                 throw new SiteException(sprintf(
-                    "Qualified name of configuration definition '%s' must be " .
-                    'of the form section.name.',
+                    "Qualified name of configuration definition '%s' must be "
+                    . 'of the form section.name.',
                     $qualified_name
                 ));
             }
@@ -568,8 +568,8 @@ class SiteConfigModule extends SiteApplicationModule
                 );
 
                 if (array_key_exists($env_var_name, $env)) {
-                    $default_value =
-                        $this->definitions[$section_name][$value_name] ?? null;
+                    $default_value
+                        = $this->definitions[$section_name][$value_name] ?? null;
 
                     if (!is_scalar($default_value) && !is_null($default_value)) {
                         $default_type = gettype($default_value);
@@ -614,10 +614,10 @@ class SiteConfigModule extends SiteApplicationModule
                 if ($row->value !== null) {
                     $qualified_name = $row->name;
 
-                    if (mb_strpos($qualified_name, '.') === false) {
+                    if (!str_contains($qualified_name, '.')) {
                         throw new SiteException(sprintf(
-                            "Name of configuration setting '%s' must be " .
-                            'fully qualifed and of the form section.name.',
+                            "Name of configuration setting '%s' must be "
+                            . 'fully qualifed and of the form section.name.',
                             $qualified_name
                         ));
                     }
@@ -657,10 +657,10 @@ class SiteConfigModule extends SiteApplicationModule
             if ($setting->value !== null) {
                 $qualified_name = $setting->name;
 
-                if (mb_strpos($qualified_name, '.') === false) {
+                if (!str_contains($qualified_name, '.')) {
                     throw new SiteException(sprintf(
-                        "Name of configuration setting '%s' must be " .
-                        'fully qualifed and of the form section.name.',
+                        "Name of configuration setting '%s' must be "
+                        . 'fully qualifed and of the form section.name.',
                         $qualified_name
                     ));
                 }

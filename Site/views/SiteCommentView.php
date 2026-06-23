@@ -48,8 +48,8 @@ abstract class SiteCommentView extends SiteView
     {
         if (!$comment instanceof SiteComment) {
             throw new InvalidArgumentException(sprintf(
-                'The view "%s" can ' .
-                'only display SiteComment objects.',
+                'The view "%s" can '
+                . 'only display SiteComment objects.',
                 static::class
             ));
         }
@@ -66,6 +66,8 @@ abstract class SiteCommentView extends SiteView
 
     protected function displayHeader(SiteComment $comment)
     {
+        $elements = [];
+
         $heading_tag = new SwatHtmlTag('h4');
         $heading_tag->class = 'comment-title';
 

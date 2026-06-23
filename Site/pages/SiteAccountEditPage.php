@@ -55,8 +55,8 @@ class SiteAccountEditPage extends SiteDBEditPage
 
         if ($this->ui->hasWidget('confirm_password')) {
             $confirm_password = $this->ui->getWidget('confirm_password');
-            $confirm_password->password_widget =
-                $this->ui->getWidget('password');
+            $confirm_password->password_widget
+                = $this->ui->getWidget('password');
         }
 
         if ($this->ui->hasWidget('confirm_email')) {
@@ -94,8 +94,8 @@ class SiteAccountEditPage extends SiteDBEditPage
             return;
         }
 
-        $instance = ($this->app->hasModule('SiteMultipleInstanceModule')) ?
-            $this->app->instance->getInstance() : null;
+        $instance = ($this->app->hasModule('SiteMultipleInstanceModule'))
+            ? $this->app->instance->getInstance() : null;
 
         $class_name = SwatDBClassMap::get(SiteAccount::class);
         $account = new $class_name();
@@ -123,9 +123,9 @@ class SiteAccountEditPage extends SiteDBEditPage
                 $this->ui->getWidget('email')->value
             );
 
-            $message->secondary_content =
-                sprintf(Site::_('You can %srequest a new password%s to ' .
-                    'sign into the existing account.'), $email_link, '</a>');
+            $message->secondary_content
+                = sprintf(Site::_('You can %srequest a new password%s to '
+                    . 'sign into the existing account.'), $email_link, '</a>');
 
             $message->content_type = 'text/xml';
         }
@@ -228,8 +228,8 @@ class SiteAccountEditPage extends SiteDBEditPage
 
         $form = $this->ui->getWidget('edit_form');
         if (!$this->isNew($form)) {
-            $this->ui->getWidget('submit_button')->title =
-                Site::_('Update Account Details');
+            $this->ui->getWidget('submit_button')->title
+                = Site::_('Update Account Details');
 
             $this->ui->getWidget('password_container')->visible = false;
         }
@@ -268,8 +268,8 @@ class SiteAccountEditPage extends SiteDBEditPage
         $this->assignObjectValuesToUi($this->account, ['fullname']);
 
         if ($this->ui->hasWidget('confirm_email')) {
-            $this->ui->getWidget('confirm_email')->value =
-                $this->account->email;
+            $this->ui->getWidget('confirm_email')->value
+                = $this->account->email;
         }
 
         if ($this->ui->hasWidget('email')) {

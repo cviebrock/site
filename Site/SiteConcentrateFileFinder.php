@@ -54,9 +54,9 @@ class SiteConcentrateFileFinder implements Concentrate_DataProvider_FileFinderIn
                         }
 
                         $finder = new Concentrate_DataProvider_FileFinderDirectory(
-                            $vendor_path . DIRECTORY_SEPARATOR .
-                            $package_name . DIRECTORY_SEPARATOR .
-                            'dependencies'
+                            $vendor_path . DIRECTORY_SEPARATOR
+                            . $package_name . DIRECTORY_SEPARATOR
+                            . 'dependencies'
                         );
 
                         $files = [

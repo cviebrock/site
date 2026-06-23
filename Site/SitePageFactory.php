@@ -150,8 +150,8 @@ abstract class SitePageFactory
         array $arguments = []
     ): SitePage {
         if (!$this->isPage($class)) {
-            throw new SiteClassNotFoundException(sprintf('The provided page ' .
-                'class ‘%s’ is not a SitePage.', $class), 0, $class);
+            throw new SiteClassNotFoundException(sprintf('The provided page '
+                . 'class ‘%s’ is not a SitePage.', $class), 0, $class);
         }
 
         return new $class($this->app, $layout, $arguments);
@@ -176,8 +176,8 @@ abstract class SitePageFactory
     protected function instantiateLayout(string $class, ?string $filename = null): SiteLayout
     {
         if (!$this->isLayout($class)) {
-            throw new SiteClassNotFoundException(sprintf('The provided layout ' .
-                'class ‘%s’ is not a SiteLayout.', $class), 0, $class);
+            throw new SiteClassNotFoundException(sprintf('The provided layout '
+                . 'class ‘%s’ is not a SiteLayout.', $class), 0, $class);
         }
 
         return new $class($this->app, $filename);
@@ -298,8 +298,8 @@ abstract class SitePageFactory
     {
         if (!$this->isDecorator($class)) {
             throw new SiteClassNotFoundException(
-                sprintf('The provided page ' .
-                'decorator class ‘%s’ is not a SitePageDecorator.', $class),
+                sprintf('The provided page '
+                . 'decorator class ‘%s’ is not a SitePageDecorator.', $class),
                 0,
                 $class
             );

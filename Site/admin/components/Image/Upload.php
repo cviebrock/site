@@ -170,9 +170,9 @@ abstract class SiteImageUpload extends AdminObjectEdit
         ) {
             $message = new SwatMessage(
                 Site::_(
-                    'You must either upload a file to be automatically ' .
-                    'resized or upload manually resized files for all ' .
-                    'dimensions.'
+                    'You must either upload a file to be automatically '
+                    . 'resized or upload manually resized files for all '
+                    . 'dimensions.'
                 ),
                 'error'
             );
@@ -324,8 +324,8 @@ abstract class SiteImageUpload extends AdminObjectEdit
         }
 
         if ($minimum_dimension_note != '') {
-            $this->ui->getWidget('upload_widget')->parent->note =
-                $minimum_dimension_note;
+            $this->ui->getWidget('upload_widget')->parent->note
+                = $minimum_dimension_note;
         }
     }
 

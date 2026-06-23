@@ -66,8 +66,8 @@ abstract class SiteEditPage extends SiteUiPage
                 );
 
                 $message->secondary_content = Site::_(
-                    'In order to ensure your security, we were unable to ' .
-                    'process your request. Please try again.'
+                    'In order to ensure your security, we were unable to '
+                    . 'process your request. Please try again.'
                 );
 
                 $messages->add($message);
@@ -233,11 +233,11 @@ abstract class SiteEditPage extends SiteUiPage
 
     protected function getInvalidMessage(SwatForm $form)
     {
-        $message = new SwatMessage(Site::_('There is a problem with ' .
-            'the information submitted.'), 'error');
+        $message = new SwatMessage(Site::_('There is a problem with '
+            . 'the information submitted.'), 'error');
 
-        $message->secondary_content = Site::_('Please address the ' .
-            'fields highlighted below and re-submit the form.');
+        $message->secondary_content = Site::_('Please address the '
+            . 'fields highlighted below and re-submit the form.');
 
         return $message;
     }

@@ -1,13 +1,13 @@
 #!/usr/bin/php
 <?php
 
-$package_dir = __DIR__ . DIRECTORY_SEPARATOR .
-    '..' . DIRECTORY_SEPARATOR .
-    '..' . DIRECTORY_SEPARATOR;
+$package_dir = __DIR__ . DIRECTORY_SEPARATOR
+    . '..' . DIRECTORY_SEPARATOR
+    . '..' . DIRECTORY_SEPARATOR;
 
 set_include_path(
-    $package_dir . PATH_SEPARATOR .
-    '/my/pear/dir/'
+    $package_dir . PATH_SEPARATOR
+    . '/my/pear/dir/'
 );
 
 ini_set('memory_limit', -1);

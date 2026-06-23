@@ -66,9 +66,9 @@ class SiteAccountResetPasswordPage extends SiteEditPage
         $account = new $class();
         $account->setDatabase($this->app->db);
 
-        return ($account->loadByPasswordTag($password_tag)) ?
-            $account :
-            null;
+        return ($account->loadByPasswordTag($password_tag))
+            ? $account
+            : null;
     }
 
     protected function getChangePasswordSource()
@@ -136,17 +136,17 @@ class SiteAccountResetPasswordPage extends SiteEditPage
             $text = sprintf(
                 '<p>%s</p><ul><li>%s</li><li>%s</li></ul>',
                 Site::_(
-                    'Please verify that the link is exactly the same as ' .
-                    'the one emailed to you.'
+                    'Please verify that the link is exactly the same as '
+                    . 'the one emailed to you.'
                 ),
                 Site::_(
-                    'If you requested an email more than once, only the ' .
-                    'most recent link will work.'
+                    'If you requested an email more than once, only the '
+                    . 'most recent link will work.'
                 ),
                 sprintf(
                     Site::_(
-                        'If you have lost the link sent in the ' .
-                        'email, you may %shave the email sent again%s.'
+                        'If you have lost the link sent in the '
+                        . 'email, you may %shave the email sent again%s.'
                     ),
                     sprintf(
                         '<a href="%s">',

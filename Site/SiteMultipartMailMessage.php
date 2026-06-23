@@ -352,9 +352,9 @@ class SiteMultipartMailMessage extends SiteObject
 
     protected function getAddressHeader($address, $name = '')
     {
-        $header = ($name != '') ?
-            '"%2$s" <%1$s>' :
-            '%1$s';
+        $header = ($name != '')
+            ? '"%2$s" <%1$s>'
+            : '%1$s';
 
         return sprintf($header, $address, $name);
     }
@@ -395,8 +395,8 @@ class SiteMultipartMailMessage extends SiteObject
             $attachment_size += mb_strlen($attachment['data'], '8bit');
         }
 
-        $attachment_count = count($this->attachments) +
-            count($this->string_attachments);
+        $attachment_count = count($this->attachments)
+            + count($this->string_attachments);
 
         $values_sql = sprintf(
             $values_sql,
@@ -474,9 +474,9 @@ class SiteMultipartMailMessage extends SiteObject
         $error_message = '';
         foreach ($errors as $error) {
             $error_message .= sprintf(
-                "Message: %s\n" .
-                "Code: %s\n" .
-                'Line: %s, Column: %s',
+                "Message: %s\n"
+                . "Code: %s\n"
+                . 'Line: %s, Column: %s',
                 $error->message,
                 $error->code,
                 $error->line,

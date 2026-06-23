@@ -90,9 +90,9 @@ class SiteImage extends SwatDBDataObject
 
         if ($loaded && $this->image_set_shortname !== null) {
             if ($this->image_set->shortname != $this->image_set_shortname) {
-                throw new SwatException('Trying to load image with the ' .
-                    'wrong image set. This may happen if the wrong wrapper ' .
-                    'class is used.');
+                throw new SwatException('Trying to load image with the '
+                    . 'wrong image set. This may happen if the wrong wrapper '
+                    . 'class is used.');
             }
         }
 
@@ -490,9 +490,9 @@ class SiteImage extends SwatDBDataObject
             $shortname
         );
 
-        return $this->getFileBase() . DIRECTORY_SEPARATOR .
-            $this->image_set->shortname . DIRECTORY_SEPARATOR .
-            $dimension->shortname;
+        return $this->getFileBase() . DIRECTORY_SEPARATOR
+            . $this->image_set->shortname . DIRECTORY_SEPARATOR
+            . $dimension->shortname;
     }
 
     public function getImgTag($shortname, $prefix = null)
@@ -600,9 +600,9 @@ class SiteImage extends SwatDBDataObject
     protected function getFileBase()
     {
         if ($this->file_base === null) {
-            throw new SwatException('File base has not been set on the ' .
-                'dataobject. Set the path to the webroot using ' .
-                'setFileBase().');
+            throw new SwatException('File base has not been set on the '
+                . 'dataobject. Set the path to the webroot using '
+                . 'setFileBase().');
         }
 
         return $this->file_base;
@@ -615,8 +615,8 @@ class SiteImage extends SwatDBDataObject
         );
 
         foreach ($this->dimension_bindings as $binding) {
-            $id = ($binding->dimension instanceof SiteImageDimension) ?
-                $binding->dimension->id : $binding->dimension;
+            $id = ($binding->dimension instanceof SiteImageDimension)
+                ? $binding->dimension->id : $binding->dimension;
 
             if ($dimension->id === $id) {
                 return $binding;
@@ -896,15 +896,15 @@ class SiteImage extends SwatDBDataObject
             return;
         }
 
-        if ($imagick->getImageWidth() / $width >
-            $imagick->getImageHeight() / $height) {
+        if ($imagick->getImageWidth() / $width
+            > $imagick->getImageHeight() / $height) {
             $new_height = $height;
-            $new_width = ceil($imagick->getImageWidth() *
-                ($new_height / $imagick->getImageHeight()));
+            $new_width = ceil($imagick->getImageWidth()
+                * ($new_height / $imagick->getImageHeight()));
         } else {
             $new_width = $width;
-            $new_height = ceil($imagick->getImageHeight() *
-                ($new_width / $imagick->getImageWidth()));
+            $new_height = ceil($imagick->getImageHeight()
+                * ($new_width / $imagick->getImageWidth()));
         }
 
         $this->setDimensionDpi($imagick, $dimension, $new_width);
@@ -924,8 +924,8 @@ class SiteImage extends SwatDBDataObject
         // crop to fit
         if ($imagick->getImageWidth() != $width
             || $imagick->getImageHeight() != $height) {
-            [$offset_x, $offset_y] =
-                $this->calculateCropToDimensionOffset($imagick, $dimension);
+            [$offset_x, $offset_y]
+                = $this->calculateCropToDimensionOffset($imagick, $dimension);
 
             $imagick->cropImage($width, $height, $offset_x, $offset_y);
 
@@ -1002,8 +1002,8 @@ class SiteImage extends SwatDBDataObject
                 $imagick->getImageWidth()
             );
 
-            $new_height = ceil($imagick->getImageHeight() *
-                ($new_width / $imagick->getImageWidth()));
+            $new_height = ceil($imagick->getImageHeight()
+                * ($new_width / $imagick->getImageWidth()));
 
             $this->setDimensionDpi($imagick, $dimension, $new_width);
 
@@ -1027,8 +1027,8 @@ class SiteImage extends SwatDBDataObject
                 $imagick->getImageHeight()
             );
 
-            $new_width = ceil($imagick->getImageWidth() *
-                ($new_height / $imagick->getImageHeight()));
+            $new_width = ceil($imagick->getImageWidth()
+                * ($new_height / $imagick->getImageHeight()));
 
             $this->setDimensionDpi($imagick, $dimension, $new_width);
 
@@ -1054,16 +1054,16 @@ class SiteImage extends SwatDBDataObject
                 || $imagick->getImageWidth() < $dimension->max_width)) {
             if ($dimension->max_width !== null) {
                 $new_width = $dimension->max_width;
-                $new_height = ceil($imagick->getImageHeight() *
-                    ($new_width / $imagick->getImageWidth()));
+                $new_height = ceil($imagick->getImageHeight()
+                    * ($new_width / $imagick->getImageWidth()));
             }
 
             if ($dimension->max_height !== null
                 && ($dimension->max_width === null
                     || $new_height > $dimension->max_height)) {
                 $new_height = $dimension->max_height;
-                $new_width = ceil($imagick->getImageWidth() *
-                    ($new_height / $imagick->getImageHeight()));
+                $new_width = ceil($imagick->getImageWidth()
+                    * ($new_height / $imagick->getImageHeight()));
             }
 
             $this->setDimensionDpi($imagick, $dimension, $new_width);
@@ -1082,10 +1082,10 @@ class SiteImage extends SwatDBDataObject
         }
 
         if ($this->getCropBox($dimension) === null) {
-            $this->imagick_instances[$dimension->shortname] =
-                (floatval(phpversion('imagick')) >= 3.1) ?
-                clone $imagick :
-                $imagick->clone();
+            $this->imagick_instances[$dimension->shortname]
+                = (floatval(phpversion('imagick')) >= 3.1)
+                ? clone $imagick
+                : $imagick->clone();
         }
     }
 
@@ -1103,8 +1103,8 @@ class SiteImage extends SwatDBDataObject
             $original_width = $imagick->getImageWidth();
         }
 
-        $dpi = ($this->original_dpi === null) ? $dimension->dpi :
-            round($this->original_dpi / ($original_width / $resized_width));
+        $dpi = ($this->original_dpi === null) ? $dimension->dpi
+            : round($this->original_dpi / ($original_width / $resized_width));
 
         $imagick->setImageResolution($dpi, $dpi);
     }
@@ -1188,8 +1188,8 @@ class SiteImage extends SwatDBDataObject
             $found = $image_type->loadByMimeType($mime_type);
             if (!$found) {
                 throw new SiteInvalidImageException(sprintf(
-                    'The mime-type “%s” is not present in the ImageType ' .
-                    'table.',
+                    'The mime-type “%s” is not present in the ImageType '
+                    . 'table.',
                     $mime_type
                 ));
             }
@@ -1310,9 +1310,9 @@ class SiteImage extends SwatDBDataObject
             $imagick = $this->getNewImagick($image_file, $dimension);
         }
 
-        return (floatval(phpversion('imagick')) >= 3.1) ?
-            clone $imagick :
-            $imagick->clone();
+        return (floatval(phpversion('imagick')) >= 3.1)
+            ? clone $imagick
+            : $imagick->clone();
     }
 
     /**
@@ -1363,8 +1363,8 @@ class SiteImage extends SwatDBDataObject
         }
 
         if ($this->image_set_shortname == '') {
-            throw new SwatException('To process images, an image type ' .
-                'shortname must be defined in the image dataobject.');
+            throw new SwatException('To process images, an image type '
+                . 'shortname must be defined in the image dataobject.');
         }
 
         $class_name = SwatDBClassMap::get(SiteImageSet::class);
@@ -1400,8 +1400,8 @@ class SiteImage extends SwatDBDataObject
 
             if ($filter === null) {
                 throw new SwatException(sprintf(
-                    '%s is not a valid ' .
-                    'Imagick constant.',
+                    '%s is not a valid '
+                    . 'Imagick constant.',
                     $dimension->resize_filter
                 ));
             }

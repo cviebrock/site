@@ -105,8 +105,8 @@ class SiteInstanceSettingIndex extends AdminDBEdit
     {
         $message = new SwatMessage(
             Site::_(
-                'Instance configuration settings have been restored to ' .
-                'defaults.'
+                'Instance configuration settings have been restored to '
+                . 'defaults.'
             )
         );
 
