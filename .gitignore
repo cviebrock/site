@@ -15,7 +15,6 @@ build/
 
 # dependency lock file
 composer.lock
-pnpm-lock.yaml
 
 # overrides for local tooling
 phpstan.neon
