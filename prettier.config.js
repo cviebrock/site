@@ -11,6 +11,7 @@ const config = {
     {
       files: '*.xml',
       options: {
+        printWidth: 120,
         tabWidth: 4,
         xmlQuoteAttributes: 'double',
         xmlWhitespaceSensitivity: 'ignore'
