@@ -18,14 +18,10 @@ return RectorConfig::configure()
     ])
     // uncomment to reach your current PHP version
     ->withPhpSets(php82: true)
-    ->withRules([
-    ])
     ->withSkip([
         ClassPropertyAssignToConstructorPromotionRector::class,
         NullToStrictStringFuncCallArgRector::class,
         RemoveUnusedVariableInCatchRector::class,
         ReadOnlyPropertyRector::class,
         ReadOnlyClassRector::class,
-    ])
-    ->withTypeCoverageLevel(1)
-    ->withDeadCodeLevel(1);
+    ]);

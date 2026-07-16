@@ -1,18 +1,18 @@
-<?xml version="1.0" standalone="no"?>
+<?xml version="1.0" standalone="no" ?>
 <!DOCTYPE swatml SYSTEM "http://swat.silverorange.com/swatml1.dtd">
 <swatml>
-	<widget class="SwatFormField">
-		<property name="title" translatable="yes">Title</property>
-		<widget class="SwatEntry" id="site_title">
-			<property name="maxlength" type="integer">255</property>
-		</widget>
-	</widget>
-	<widget class="SwatFormField">
-		<property name="title" translatable="yes">Meta Description</property>
-		<widget class="SwatTextarea" id="site_meta_description" />
-	</widget>
-	<widget class="SwatFormField">
-		<property name="title" translatable="yes">Time Zone</property>
-		<widget class="SwatTimeZoneEntry" id="date_time_zone" />
-	</widget>
+    <widget class="SwatFormField">
+        <property name="title" translatable="yes">Title</property>
+        <widget class="SwatEntry" id="site_title">
+            <property name="maxlength" type="integer">255</property>
+        </widget>
+    </widget>
+    <widget class="SwatFormField">
+        <property name="title" translatable="yes">Meta Description</property>
+        <widget class="SwatTextarea" id="site_meta_description" />
+    </widget>
+    <widget class="SwatFormField">
+        <property name="title" translatable="yes">Time Zone</property>
+        <widget class="SwatTimeZoneEntry" id="date_time_zone" />
+    </widget>
 </swatml>
