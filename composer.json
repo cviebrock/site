@@ -1,12 +1,11 @@
 {
   "name": "silverorange/site",
   "description": "Framework for building a website.",
+  "license": "LGPL-2.1",
   "type": "library",
   "keywords": [
     "framework"
   ],
-  "homepage": "https://github.com/silverorange/site",
-  "license": "LGPL-2.1",
   "authors": [
     {
       "name": "Charles Waddell",
@@ -33,8 +32,9 @@
       "email": "steven@silverorange.com"
     }
   ],
+  "homepage": "https://github.com/silverorange/site",
   "require": {
-    "php": ">=8.1.0",
+    "php": ">=8.2.0",
     "ext-curl": "*",
     "ext-gd": "*",
     "ext-iconv": "*",
@@ -46,11 +46,11 @@
     "codescale/ffmpeg-php": "^3.2.0",
     "pear/text_password": "^1.1.1",
     "sentry/sentry": "^4.9",
-    "silverorange/concentrate": "^2.0.0",
-    "silverorange/mdb2": "^3.1.2",
-    "silverorange/swat": "^7.9.2",
-    "silverorange/xml_rpc2": "^2.0.5",
-    "silverorange/xml_rpc_ajax": "^3.1",
+    "silverorange/concentrate": "^3.1.0",
+    "silverorange/mdb2": "^3.2.0",
+    "silverorange/swat": "^7.10.0",
+    "silverorange/xml_rpc2": "^2.1.0",
+    "silverorange/xml_rpc_ajax": "^3.1.0",
     "symfony/mailer": "^5.4"
   },
   "require-dev": {
@@ -72,18 +72,6 @@
     "silverorange/admin": "Enables admin components",
     "silverorange/jwplayer": "Enables video player support."
   },
-  "scripts": {
-    "phpcs": "./vendor/bin/php-cs-fixer check -v",
-    "phpcs:ci": "./vendor/bin/php-cs-fixer check --config=.php-cs-fixer.php --no-interaction --show-progress=none --diff --using-cache=no -vvv",
-    "phpcs:fix": "./vendor/bin/php-cs-fixer fix -v",
-    "phpstan": "./vendor/bin/phpstan analyze",
-    "phpstan:ci": "./vendor/bin/phpstan analyze -vvv --no-progress --memory-limit 2G",
-    "phpstan:baseline": "./vendor/bin/phpstan analyze --generate-baseline",
-    "rector": "./vendor/bin/rector --dry-run",
-    "rector:fix": "./vendor/bin/rector",
-    "test": "./vendor/bin/phpunit --no-coverage",
-    "test:coverage": "rm -rf ./build && XDEBUG_MODE=coverage ./vendor/bin/phpunit && npx serve build/coverage"
-  },
   "autoload": {
     "classmap": [
       "Site/",
@@ -92,5 +80,17 @@
   },
   "config": {
     "sort-packages": true
+  },
+  "scripts": {
+    "phpcs": "./vendor/bin/php-cs-fixer check -v",
+    "phpcs:ci": "./vendor/bin/php-cs-fixer check --config=.php-cs-fixer.php --no-interaction --show-progress=none --diff --using-cache=no -vvv",
+    "phpcs:fix": "./vendor/bin/php-cs-fixer fix -v",
+    "phpstan": "./vendor/bin/phpstan analyze",
+    "phpstan:baseline": "./vendor/bin/phpstan analyze --generate-baseline",
+    "phpstan:ci": "./vendor/bin/phpstan analyze -vvv --no-progress --memory-limit 2G",
+    "rector": "./vendor/bin/rector --dry-run",
+    "rector:fix": "./vendor/bin/rector",
+    "test": "./vendor/bin/phpunit --no-coverage",
+    "test:coverage": "rm -rf ./build && XDEBUG_MODE=coverage ./vendor/bin/phpunit && npx serve build/coverage"
   }
 }
