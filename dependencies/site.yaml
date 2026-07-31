@@ -25,20 +25,25 @@ Site:
 
   Provides:
     # JavaScript resources
-    packages/site/javascript/site-gravatar-entry.js:
-    packages/site/javascript/site-tag-entry.js:
-    packages/site/javascript/site-upload-progress-bar.js:
     packages/site/javascript/site-content-slider.js:
+    packages/site/javascript/site-dialog.js:
+    packages/site/javascript/site-gravatar-entry.js:
+    packages/site/javascript/site-jw-player-media-display.js:
+    packages/site/javascript/site-tag-entry.js:
     packages/site/admin/javascript/site-comment-display.js:
     packages/site/admin/javascript/site-comment-status-slider.js:
 
     # Style-sheet resources
     packages/site/styles/site-account-login-page.css:
     packages/site/styles/site-account-reset-password-page.css:
+    packages/site/styles/site-admin-forgot-password-page.css:
     packages/site/styles/site-contact-page.css:
+    packages/site/styles/site-content-slider.css:
     packages/site/styles/site-image-cell-renderer.css:
+    packages/site/styles/site-jw-player-media-display.css:
     packages/site/styles/site-search-results-page.css:
     packages/site/styles/site-tag-entry.css:
-    packages/site/styles/site-content-slider.css:
+    packages/site/admin/styles/site-account-merge.css:
     packages/site/admin/styles/site-comment-display.css:
     packages/site/admin/styles/site-comment-status-slider.css:
+    packages/site/admin/styles/site-image-upload.css:
