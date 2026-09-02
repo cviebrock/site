@@ -373,6 +373,7 @@ abstract class SiteApplication extends SiteObject
             'environment'          => $config->sentry->environment,
             'default_integrations' => false,
             'release'              => $this->getReleaseVersion(),
+            'before_send'          => new SiteSentryContextHandler(),
             'integrations'         => [
                 new FatalErrorListenerIntegration(),
             ],

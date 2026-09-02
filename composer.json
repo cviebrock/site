@@ -30,6 +30,10 @@
     {
       "name": "Steven Garrity",
       "email": "steven@silverorange.com"
+    },
+    {
+      "name": "Colin Viebrock",
+      "email": "colin@silverorange.com"
     }
   ],
   "homepage": "https://github.com/silverorange/site",
